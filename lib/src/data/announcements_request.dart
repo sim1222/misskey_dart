@@ -7,12 +7,12 @@ part 'announcements_request.g.dart';
 class AnnouncementsRequest with _$AnnouncementsRequest {
   const factory AnnouncementsRequest({
     int? limit,
-    @Deprecated("removed in Misskey 2023.9") bool? withUnreads,
-    bool? isActive,
+    bool? withUnreads,
+    // bool? isActive,
     String? sinceId,
     String? untilId,
     // ioはこれで動く
-    int? offset,
+    // int? offset,
   }) = _AnnouncementsRequest;
 
   factory AnnouncementsRequest.fromJson(Map<String, Object?> json) =>

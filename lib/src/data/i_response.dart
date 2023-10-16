@@ -21,7 +21,7 @@ class IResponse with _$IResponse {
     required bool isCat,
     @EmojisConverter() @Default({}) Map<String, String>? emojis,
     String? onlineStatus,
-    required List<UserBadgeRole> badgeRoles,
+    // required List<UserBadgeRole> badgeRoles,
     @NullableUriConverter() Uri? url,
     @NullableUriConverter() Uri? uri,
     @DateTimeConverter() required DateTime createdAt,
@@ -72,14 +72,14 @@ class IResponse with _$IResponse {
     @Default([]) List<AnnouncementsResponse> unreadAnnouncements,
     @MuteWordsConverter() required List<MuteWord> mutedWords,
     required List<String> mutedInstances,
-    @Deprecated("Depracted from Misskey 2023.9.2")
+    // @Deprecated("Depracted from Misskey 2023.9.2")
     List<String>? mutingNotificationTypes,
-    dynamic notificationRecieveConfig,
+    // dynamic notificationRecieveConfig,
     required List<String> emailNotificationTypes,
-    //required bool showTimelineReplies,
-    required List<UserAchievement> achievements,
-    required int loggedInDays,
-    required UserPolicies policies,
+    required bool showTimelineReplies,
+    // required List<UserAchievement> achievements,
+    // required int loggedInDays,
+    // required UserPolicies policies,
   }) = _IResponse;
 
   factory IResponse.fromJson(Map<String, Object?> json) =>

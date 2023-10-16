@@ -6,8 +6,8 @@ part of 'meta_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MetaResponse _$$_MetaResponseFromJson(Map<String, dynamic> json) =>
-    _$_MetaResponse(
+_$MetaResponseImpl _$$MetaResponseImplFromJson(Map<String, dynamic> json) =>
+    _$MetaResponseImpl(
       maintainerName: json['maintainerName'] as String?,
       maintainerEmail: json['maintainerEmail'] as String?,
       version: json['version'] as String,
@@ -23,6 +23,10 @@ _$_MetaResponse _$$_MetaResponseFromJson(Map<String, dynamic> json) =>
       defaultDarkTheme: json['defaultDarkTheme'] as String?,
       defaultLightTheme: json['defaultLightTheme'] as String?,
       disableRegistration: json['disableRegistration'] as bool,
+      disableLocalTimeline: json['disableLocalTimeline'] as bool,
+      disableGlobalTimeline: json['disableGlobalTimeline'] as bool,
+      driveCapacityPerLocalUserMb: json['driveCapacityPerLocalUserMb'] as int,
+      driveCapacityPerRemoteUserMb: json['driveCapacityPerRemoteUserMb'] as int,
       emailRequiredForSignup: json['emailRequiredForSignup'] as bool,
       enableHcaptcha: json['enableHcaptcha'] as bool,
       hcaptchaSiteKey: json['hcaptchaSiteKey'] as String?,
@@ -45,6 +49,9 @@ _$_MetaResponse _$$_MetaResponseFromJson(Map<String, dynamic> json) =>
       logoImageUrl: _$JsonConverterFromJson<String, Uri?>(
           json['logoImageUrl'], const NullableUriConverter().fromJson),
       maxNoteTextLength: json['maxNoteTextLength'] as int,
+      emojis: (json['emojis'] as List<dynamic>)
+          .map((e) => MetaEmoji.fromJson(e as Map<String, dynamic>))
+          .toList(),
       ads: (json['ads'] as List<dynamic>)
           .map((e) => MetaAd.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -53,14 +60,13 @@ _$_MetaResponse _$$_MetaResponseFromJson(Map<String, dynamic> json) =>
       enableServiceWorker: json['enableServiceWorker'] as bool?,
       translatorAvailable: json['translatorAvailable'] as bool?,
       proxyAccountName: json['proxyAccountName'] as String?,
-      mediaProxy: json['mediaProxy'] as String?,
       cacheRemoteFiles: json['cacheRemoteFiles'] as bool?,
       features: json['features'] == null
           ? null
           : MetaFeature.fromJson(json['features'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MetaResponseToJson(_$_MetaResponse instance) =>
+Map<String, dynamic> _$$MetaResponseImplToJson(_$MetaResponseImpl instance) =>
     <String, dynamic>{
       'maintainerName': instance.maintainerName,
       'maintainerEmail': instance.maintainerEmail,
@@ -75,6 +81,10 @@ Map<String, dynamic> _$$_MetaResponseToJson(_$_MetaResponse instance) =>
       'defaultDarkTheme': instance.defaultDarkTheme,
       'defaultLightTheme': instance.defaultLightTheme,
       'disableRegistration': instance.disableRegistration,
+      'disableLocalTimeline': instance.disableLocalTimeline,
+      'disableGlobalTimeline': instance.disableGlobalTimeline,
+      'driveCapacityPerLocalUserMb': instance.driveCapacityPerLocalUserMb,
+      'driveCapacityPerRemoteUserMb': instance.driveCapacityPerRemoteUserMb,
       'emailRequiredForSignup': instance.emailRequiredForSignup,
       'enableHcaptcha': instance.enableHcaptcha,
       'hcaptchaSiteKey': instance.hcaptchaSiteKey,
@@ -95,13 +105,13 @@ Map<String, dynamic> _$$_MetaResponseToJson(_$_MetaResponse instance) =>
       'logoImageUrl':
           const NullableUriConverter().toJson(instance.logoImageUrl),
       'maxNoteTextLength': instance.maxNoteTextLength,
+      'emojis': instance.emojis,
       'ads': instance.ads,
       'requireSetup': instance.requireSetup,
       'enableEmail': instance.enableEmail,
       'enableServiceWorker': instance.enableServiceWorker,
       'translatorAvailable': instance.translatorAvailable,
       'proxyAccountName': instance.proxyAccountName,
-      'mediaProxy': instance.mediaProxy,
       'cacheRemoteFiles': instance.cacheRemoteFiles,
       'features': instance.features,
     };
@@ -112,7 +122,26 @@ Value? _$JsonConverterFromJson<Json, Value>(
 ) =>
     json == null ? null : fromJson(json as Json);
 
-_$_MetaAd _$$_MetaAdFromJson(Map<String, dynamic> json) => _$_MetaAd(
+_$MetaEmojiImpl _$$MetaEmojiImplFromJson(Map<String, dynamic> json) =>
+    _$MetaEmojiImpl(
+      id: json['id'] as String,
+      aliases:
+          (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
+      category: json['category'] as String?,
+      host: json['host'] as String?,
+      url: const UriConverter().fromJson(json['url'] as String),
+    );
+
+Map<String, dynamic> _$$MetaEmojiImplToJson(_$MetaEmojiImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'aliases': instance.aliases,
+      'category': instance.category,
+      'host': instance.host,
+      'url': const UriConverter().toJson(instance.url),
+    };
+
+_$MetaAdImpl _$$MetaAdImplFromJson(Map<String, dynamic> json) => _$MetaAdImpl(
       id: json['id'] as String,
       place: json['place'] as String,
       url: const UriConverter().fromJson(json['url'] as String),
@@ -120,7 +149,8 @@ _$_MetaAd _$$_MetaAdFromJson(Map<String, dynamic> json) => _$_MetaAd(
       ratio: json['ratio'] as int,
     );
 
-Map<String, dynamic> _$$_MetaAdToJson(_$_MetaAd instance) => <String, dynamic>{
+Map<String, dynamic> _$$MetaAdImplToJson(_$MetaAdImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'place': instance.place,
       'url': const UriConverter().toJson(instance.url),
@@ -128,8 +158,8 @@ Map<String, dynamic> _$$_MetaAdToJson(_$_MetaAd instance) => <String, dynamic>{
       'ratio': instance.ratio,
     };
 
-_$_MetaFeature _$$_MetaFeatureFromJson(Map<String, dynamic> json) =>
-    _$_MetaFeature(
+_$MetaFeatureImpl _$$MetaFeatureImplFromJson(Map<String, dynamic> json) =>
+    _$MetaFeatureImpl(
       registration: json['registration'] as bool,
       emailRequiredForSignup: json['emailRequiredForSignup'] as bool,
       hcaptcha: json['hcaptcha'] as bool,
@@ -140,7 +170,7 @@ _$_MetaFeature _$$_MetaFeatureFromJson(Map<String, dynamic> json) =>
       miauth: json['miauth'] as bool,
     );
 
-Map<String, dynamic> _$$_MetaFeatureToJson(_$_MetaFeature instance) =>
+Map<String, dynamic> _$$MetaFeatureImplToJson(_$MetaFeatureImpl instance) =>
     <String, dynamic>{
       'registration': instance.registration,
       'emailRequiredForSignup': instance.emailRequiredForSignup,

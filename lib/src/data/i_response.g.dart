@@ -6,7 +6,8 @@ part of 'i_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
+_$IResponseImpl _$$IResponseImplFromJson(Map<String, dynamic> json) =>
+    _$IResponseImpl(
       id: json['id'] as String,
       name: json['name'] as String?,
       username: json['username'] as String,
@@ -19,9 +20,6 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
           ? const {}
           : const EmojisConverter().fromJson(json['emojis']),
       onlineStatus: json['onlineStatus'] as String?,
-      badgeRoles: (json['badgeRoles'] as List<dynamic>)
-          .map((e) => UserBadgeRole.fromJson(e as Map<String, dynamic>))
-          .toList(),
       url: _$JsonConverterFromJson<String, Uri?>(
           json['url'], const NullableUriConverter().fromJson),
       uri: _$JsonConverterFromJson<String, Uri?>(
@@ -96,18 +94,13 @@ _$_IResponse _$$_IResponseFromJson(Map<String, dynamic> json) => _$_IResponse(
           (json['mutingNotificationTypes'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
-      notificationRecieveConfig: json['notificationRecieveConfig'],
       emailNotificationTypes: (json['emailNotificationTypes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      achievements: (json['achievements'] as List<dynamic>)
-          .map((e) => UserAchievement.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      loggedInDays: json['loggedInDays'] as int,
-      policies: UserPolicies.fromJson(json['policies'] as Map<String, dynamic>),
+      showTimelineReplies: json['showTimelineReplies'] as bool,
     );
 
-Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
+Map<String, dynamic> _$$IResponseImplToJson(_$IResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -120,7 +113,6 @@ Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
       'emojis': _$JsonConverterToJson<dynamic, Map<String, String>>(
           instance.emojis, const EmojisConverter().toJson),
       'onlineStatus': instance.onlineStatus,
-      'badgeRoles': instance.badgeRoles,
       'url': const NullableUriConverter().toJson(instance.url),
       'uri': const NullableUriConverter().toJson(instance.uri),
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
@@ -175,11 +167,8 @@ Map<String, dynamic> _$$_IResponseToJson(_$_IResponse instance) =>
           instance.mutedWords.map(const MuteWordsConverter().toJson).toList(),
       'mutedInstances': instance.mutedInstances,
       'mutingNotificationTypes': instance.mutingNotificationTypes,
-      'notificationRecieveConfig': instance.notificationRecieveConfig,
       'emailNotificationTypes': instance.emailNotificationTypes,
-      'achievements': instance.achievements,
-      'loggedInDays': instance.loggedInDays,
-      'policies': instance.policies,
+      'showTimelineReplies': instance.showTimelineReplies,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(

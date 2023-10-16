@@ -135,11 +135,12 @@ class _$AntennasUpdateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AntennasUpdateRequestCopyWith<$Res>
+abstract class _$$AntennasUpdateRequestImplCopyWith<$Res>
     implements $AntennasUpdateRequestCopyWith<$Res> {
-  factory _$$_AntennasUpdateRequestCopyWith(_$_AntennasUpdateRequest value,
-          $Res Function(_$_AntennasUpdateRequest) then) =
-      __$$_AntennasUpdateRequestCopyWithImpl<$Res>;
+  factory _$$AntennasUpdateRequestImplCopyWith(
+          _$AntennasUpdateRequestImpl value,
+          $Res Function(_$AntennasUpdateRequestImpl) then) =
+      __$$AntennasUpdateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -157,11 +158,12 @@ abstract class _$$_AntennasUpdateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AntennasUpdateRequestCopyWithImpl<$Res>
-    extends _$AntennasUpdateRequestCopyWithImpl<$Res, _$_AntennasUpdateRequest>
-    implements _$$_AntennasUpdateRequestCopyWith<$Res> {
-  __$$_AntennasUpdateRequestCopyWithImpl(_$_AntennasUpdateRequest _value,
-      $Res Function(_$_AntennasUpdateRequest) _then)
+class __$$AntennasUpdateRequestImplCopyWithImpl<$Res>
+    extends _$AntennasUpdateRequestCopyWithImpl<$Res,
+        _$AntennasUpdateRequestImpl>
+    implements _$$AntennasUpdateRequestImplCopyWith<$Res> {
+  __$$AntennasUpdateRequestImplCopyWithImpl(_$AntennasUpdateRequestImpl _value,
+      $Res Function(_$AntennasUpdateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -179,7 +181,7 @@ class __$$_AntennasUpdateRequestCopyWithImpl<$Res>
     Object? withFile = null,
     Object? notify = null,
   }) {
-    return _then(_$_AntennasUpdateRequest(
+    return _then(_$AntennasUpdateRequestImpl(
       antennaId: null == antennaId
           ? _value.antennaId
           : antennaId // ignore: cast_nullable_to_non_nullable
@@ -230,8 +232,8 @@ class __$$_AntennasUpdateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AntennasUpdateRequest implements _AntennasUpdateRequest {
-  const _$_AntennasUpdateRequest(
+class _$AntennasUpdateRequestImpl implements _AntennasUpdateRequest {
+  const _$AntennasUpdateRequestImpl(
       {required this.antennaId,
       required this.name,
       required this.src,
@@ -247,8 +249,8 @@ class _$_AntennasUpdateRequest implements _AntennasUpdateRequest {
         _excludeKeywords = excludeKeywords,
         _users = users;
 
-  factory _$_AntennasUpdateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_AntennasUpdateRequestFromJson(json);
+  factory _$AntennasUpdateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AntennasUpdateRequestImplFromJson(json);
 
   @override
   final String antennaId;
@@ -300,7 +302,7 @@ class _$_AntennasUpdateRequest implements _AntennasUpdateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AntennasUpdateRequest &&
+            other is _$AntennasUpdateRequestImpl &&
             (identical(other.antennaId, antennaId) ||
                 other.antennaId == antennaId) &&
             (identical(other.name, name) || other.name == name) &&
@@ -339,13 +341,13 @@ class _$_AntennasUpdateRequest implements _AntennasUpdateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AntennasUpdateRequestCopyWith<_$_AntennasUpdateRequest> get copyWith =>
-      __$$_AntennasUpdateRequestCopyWithImpl<_$_AntennasUpdateRequest>(
-          this, _$identity);
+  _$$AntennasUpdateRequestImplCopyWith<_$AntennasUpdateRequestImpl>
+      get copyWith => __$$AntennasUpdateRequestImplCopyWithImpl<
+          _$AntennasUpdateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AntennasUpdateRequestToJson(
+    return _$$AntennasUpdateRequestImplToJson(
       this,
     );
   }
@@ -363,10 +365,10 @@ abstract class _AntennasUpdateRequest implements AntennasUpdateRequest {
       required final bool caseSensitive,
       required final bool withReplies,
       required final bool withFile,
-      required final bool notify}) = _$_AntennasUpdateRequest;
+      required final bool notify}) = _$AntennasUpdateRequestImpl;
 
   factory _AntennasUpdateRequest.fromJson(Map<String, dynamic> json) =
-      _$_AntennasUpdateRequest.fromJson;
+      _$AntennasUpdateRequestImpl.fromJson;
 
   @override
   String get antennaId;
@@ -392,6 +394,6 @@ abstract class _AntennasUpdateRequest implements AntennasUpdateRequest {
   bool get notify;
   @override
   @JsonKey(ignore: true)
-  _$$_AntennasUpdateRequestCopyWith<_$_AntennasUpdateRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AntennasUpdateRequestImplCopyWith<_$AntennasUpdateRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

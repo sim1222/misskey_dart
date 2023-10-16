@@ -20,10 +20,10 @@ class MetaResponse with _$MetaResponse {
     String? defaultDarkTheme,
     String? defaultLightTheme,
     required bool disableRegistration,
-    //required bool disableLocalTimeline,
-    //required bool disableGlobalTimeline,
-    //required int driveCapacityPerLocalUserMb,
-    //required int driveCapacityPerRemoteUserMb,
+    required bool disableLocalTimeline,
+    required bool disableGlobalTimeline,
+    required int driveCapacityPerLocalUserMb,
+    required int driveCapacityPerRemoteUserMb,
     required bool emailRequiredForSignup,
     required bool enableHcaptcha,
     String? hcaptchaSiteKey,
@@ -40,7 +40,7 @@ class MetaResponse with _$MetaResponse {
     @NullableUriConverter() Uri? backgroundImageUrl,
     @NullableUriConverter() Uri? logoImageUrl,
     required int maxNoteTextLength,
-    //required List<MetaEmoji> emojis,
+    required List<MetaEmoji> emojis,
     required List<MetaAd> ads,
     bool? requireSetup,
     bool? enableEmail,
@@ -50,7 +50,7 @@ class MetaResponse with _$MetaResponse {
     bool? enableServiceWorker,
     bool? translatorAvailable,
     String? proxyAccountName,
-    String? mediaProxy,
+    // String? mediaProxy,
     bool? cacheRemoteFiles,
     MetaFeature? features,
   }) = _MetaResponse;
@@ -59,7 +59,7 @@ class MetaResponse with _$MetaResponse {
       _$MetaResponseFromJson(json);
 }
 
-/*@freezed
+@freezed
 class MetaEmoji with _$MetaEmoji {
   const factory MetaEmoji({
     required String id,
@@ -71,7 +71,7 @@ class MetaEmoji with _$MetaEmoji {
   }) = _MetaEmoji;
   factory MetaEmoji.fromJson(Map<String, Object?> json)
       => _$MetaEmojiFromJson(json);
-}*/
+}
 
 @freezed
 class MetaAd with _$MetaAd {

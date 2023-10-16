@@ -16,13 +16,13 @@ class AnnouncementsResponse with _$AnnouncementsResponse {
     required String text,
     required String title,
     @UriConverter() Uri? imageUrl,
-    AnnouncementIconType? icon,
-    AnnouncementDisplayType? display,
-    bool? needConfirmationToRead,
-    bool? forYou,
+    // AnnouncementIconType? icon,
+    // AnnouncementDisplayType? display,
+    // bool? needConfirmationToRead,
+    // bool? forYou,
     bool? isRead,
-    @Default(false) bool forExistingUsers,
-    String? userId,
+    // @Default(false) bool forExistingUsers,
+    // String? userId,
   }) = _AnnouncementsResponse;
 
   factory AnnouncementsResponse.fromJson(Map<String, Object?> json) =>

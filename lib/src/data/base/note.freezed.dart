@@ -334,9 +334,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
 }
 
 /// @nodoc
-abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
-  factory _$$_NoteCopyWith(_$_Note value, $Res Function(_$_Note) then) =
-      __$$_NoteCopyWithImpl<$Res>;
+abstract class _$$NoteImplCopyWith<$Res> implements $NoteCopyWith<$Res> {
+  factory _$$NoteImplCopyWith(
+          _$NoteImpl value, $Res Function(_$NoteImpl) then) =
+      __$$NoteImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -384,9 +385,10 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
-    implements _$$_NoteCopyWith<$Res> {
-  __$$_NoteCopyWithImpl(_$_Note _value, $Res Function(_$_Note) _then)
+class __$$NoteImplCopyWithImpl<$Res>
+    extends _$NoteCopyWithImpl<$Res, _$NoteImpl>
+    implements _$$NoteImplCopyWith<$Res> {
+  __$$NoteImplCopyWithImpl(_$NoteImpl _value, $Res Function(_$NoteImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -423,7 +425,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? poll = freezed,
     Object? clippedCount = freezed,
   }) {
-    return _then(_$_Note(
+    return _then(_$NoteImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -550,8 +552,8 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Note implements _Note {
-  const _$_Note(
+class _$NoteImpl implements _Note {
+  const _$NoteImpl(
       {required this.id,
       @DateTimeConverter() required this.createdAt,
       @NullableDateTimeConverter() this.updatedAt,
@@ -590,7 +592,8 @@ class _$_Note implements _Note {
         _visibleUserIds = visibleUserIds,
         _mentions = mentions;
 
-  factory _$_Note.fromJson(Map<String, dynamic> json) => _$$_NoteFromJson(json);
+  factory _$NoteImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoteImplFromJson(json);
 
   @override
   final String id;
@@ -714,7 +717,7 @@ class _$_Note implements _Note {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Note &&
+            other is _$NoteImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -800,12 +803,12 @@ class _$_Note implements _Note {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NoteCopyWith<_$_Note> get copyWith =>
-      __$$_NoteCopyWithImpl<_$_Note>(this, _$identity);
+  _$$NoteImplCopyWith<_$NoteImpl> get copyWith =>
+      __$$NoteImplCopyWithImpl<_$NoteImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NoteToJson(
+    return _$$NoteImplToJson(
       this,
     );
   }
@@ -842,9 +845,9 @@ abstract class _Note implements Note {
       @NullableUriConverter() final Uri? uri,
       @NullableUriConverter() final Uri? url,
       final NotePoll? poll,
-      final int? clippedCount}) = _$_Note;
+      final int? clippedCount}) = _$NoteImpl;
 
-  factory _Note.fromJson(Map<String, dynamic> json) = _$_Note.fromJson;
+  factory _Note.fromJson(Map<String, dynamic> json) = _$NoteImpl.fromJson;
 
   @override
   String get id;
@@ -915,7 +918,8 @@ abstract class _Note implements Note {
   int? get clippedCount;
   @override
   @JsonKey(ignore: true)
-  _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;
+  _$$NoteImplCopyWith<_$NoteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 NoteChannelInfo _$NoteChannelInfoFromJson(Map<String, dynamic> json) {
@@ -979,22 +983,22 @@ class _$NoteChannelInfoCopyWithImpl<$Res, $Val extends NoteChannelInfo>
 }
 
 /// @nodoc
-abstract class _$$_NoteChannelInfoCopyWith<$Res>
+abstract class _$$NoteChannelInfoImplCopyWith<$Res>
     implements $NoteChannelInfoCopyWith<$Res> {
-  factory _$$_NoteChannelInfoCopyWith(
-          _$_NoteChannelInfo value, $Res Function(_$_NoteChannelInfo) then) =
-      __$$_NoteChannelInfoCopyWithImpl<$Res>;
+  factory _$$NoteChannelInfoImplCopyWith(_$NoteChannelInfoImpl value,
+          $Res Function(_$NoteChannelInfoImpl) then) =
+      __$$NoteChannelInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name, @NullableColorConverter() int? color});
 }
 
 /// @nodoc
-class __$$_NoteChannelInfoCopyWithImpl<$Res>
-    extends _$NoteChannelInfoCopyWithImpl<$Res, _$_NoteChannelInfo>
-    implements _$$_NoteChannelInfoCopyWith<$Res> {
-  __$$_NoteChannelInfoCopyWithImpl(
-      _$_NoteChannelInfo _value, $Res Function(_$_NoteChannelInfo) _then)
+class __$$NoteChannelInfoImplCopyWithImpl<$Res>
+    extends _$NoteChannelInfoCopyWithImpl<$Res, _$NoteChannelInfoImpl>
+    implements _$$NoteChannelInfoImplCopyWith<$Res> {
+  __$$NoteChannelInfoImplCopyWithImpl(
+      _$NoteChannelInfoImpl _value, $Res Function(_$NoteChannelInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1004,7 +1008,7 @@ class __$$_NoteChannelInfoCopyWithImpl<$Res>
     Object? name = null,
     Object? color = freezed,
   }) {
-    return _then(_$_NoteChannelInfo(
+    return _then(_$NoteChannelInfoImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1023,14 +1027,14 @@ class __$$_NoteChannelInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NoteChannelInfo implements _NoteChannelInfo {
-  const _$_NoteChannelInfo(
+class _$NoteChannelInfoImpl implements _NoteChannelInfo {
+  const _$NoteChannelInfoImpl(
       {required this.id,
       required this.name,
       @NullableColorConverter() this.color});
 
-  factory _$_NoteChannelInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_NoteChannelInfoFromJson(json);
+  factory _$NoteChannelInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoteChannelInfoImplFromJson(json);
 
   @override
   final String id;
@@ -1049,7 +1053,7 @@ class _$_NoteChannelInfo implements _NoteChannelInfo {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NoteChannelInfo &&
+            other is _$NoteChannelInfoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color));
@@ -1062,12 +1066,13 @@ class _$_NoteChannelInfo implements _NoteChannelInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NoteChannelInfoCopyWith<_$_NoteChannelInfo> get copyWith =>
-      __$$_NoteChannelInfoCopyWithImpl<_$_NoteChannelInfo>(this, _$identity);
+  _$$NoteChannelInfoImplCopyWith<_$NoteChannelInfoImpl> get copyWith =>
+      __$$NoteChannelInfoImplCopyWithImpl<_$NoteChannelInfoImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NoteChannelInfoToJson(
+    return _$$NoteChannelInfoImplToJson(
       this,
     );
   }
@@ -1077,10 +1082,10 @@ abstract class _NoteChannelInfo implements NoteChannelInfo {
   const factory _NoteChannelInfo(
       {required final String id,
       required final String name,
-      @NullableColorConverter() final int? color}) = _$_NoteChannelInfo;
+      @NullableColorConverter() final int? color}) = _$NoteChannelInfoImpl;
 
   factory _NoteChannelInfo.fromJson(Map<String, dynamic> json) =
-      _$_NoteChannelInfo.fromJson;
+      _$NoteChannelInfoImpl.fromJson;
 
   @override
   String get id;
@@ -1091,7 +1096,7 @@ abstract class _NoteChannelInfo implements NoteChannelInfo {
   int? get color;
   @override
   @JsonKey(ignore: true)
-  _$$_NoteChannelInfoCopyWith<_$_NoteChannelInfo> get copyWith =>
+  _$$NoteChannelInfoImplCopyWith<_$NoteChannelInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1158,10 +1163,11 @@ class _$NotePollCopyWithImpl<$Res, $Val extends NotePoll>
 }
 
 /// @nodoc
-abstract class _$$_NotePollCopyWith<$Res> implements $NotePollCopyWith<$Res> {
-  factory _$$_NotePollCopyWith(
-          _$_NotePoll value, $Res Function(_$_NotePoll) then) =
-      __$$_NotePollCopyWithImpl<$Res>;
+abstract class _$$NotePollImplCopyWith<$Res>
+    implements $NotePollCopyWith<$Res> {
+  factory _$$NotePollImplCopyWith(
+          _$NotePollImpl value, $Res Function(_$NotePollImpl) then) =
+      __$$NotePollImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1171,11 +1177,11 @@ abstract class _$$_NotePollCopyWith<$Res> implements $NotePollCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_NotePollCopyWithImpl<$Res>
-    extends _$NotePollCopyWithImpl<$Res, _$_NotePoll>
-    implements _$$_NotePollCopyWith<$Res> {
-  __$$_NotePollCopyWithImpl(
-      _$_NotePoll _value, $Res Function(_$_NotePoll) _then)
+class __$$NotePollImplCopyWithImpl<$Res>
+    extends _$NotePollCopyWithImpl<$Res, _$NotePollImpl>
+    implements _$$NotePollImplCopyWith<$Res> {
+  __$$NotePollImplCopyWithImpl(
+      _$NotePollImpl _value, $Res Function(_$NotePollImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1185,7 +1191,7 @@ class __$$_NotePollCopyWithImpl<$Res>
     Object? expiresAt = freezed,
     Object? choices = null,
   }) {
-    return _then(_$_NotePoll(
+    return _then(_$NotePollImpl(
       multiple: null == multiple
           ? _value.multiple
           : multiple // ignore: cast_nullable_to_non_nullable
@@ -1204,15 +1210,15 @@ class __$$_NotePollCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotePoll implements _NotePoll {
-  const _$_NotePoll(
+class _$NotePollImpl implements _NotePoll {
+  const _$NotePollImpl(
       {required this.multiple,
       @DateTimeConverter() this.expiresAt,
       required final List<NotePollChoice> choices})
       : _choices = choices;
 
-  factory _$_NotePoll.fromJson(Map<String, dynamic> json) =>
-      _$$_NotePollFromJson(json);
+  factory _$NotePollImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotePollImplFromJson(json);
 
   @override
   final bool multiple;
@@ -1236,7 +1242,7 @@ class _$_NotePoll implements _NotePoll {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotePoll &&
+            other is _$NotePollImpl &&
             (identical(other.multiple, multiple) ||
                 other.multiple == multiple) &&
             (identical(other.expiresAt, expiresAt) ||
@@ -1252,12 +1258,12 @@ class _$_NotePoll implements _NotePoll {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotePollCopyWith<_$_NotePoll> get copyWith =>
-      __$$_NotePollCopyWithImpl<_$_NotePoll>(this, _$identity);
+  _$$NotePollImplCopyWith<_$NotePollImpl> get copyWith =>
+      __$$NotePollImplCopyWithImpl<_$NotePollImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotePollToJson(
+    return _$$NotePollImplToJson(
       this,
     );
   }
@@ -1267,9 +1273,10 @@ abstract class _NotePoll implements NotePoll {
   const factory _NotePoll(
       {required final bool multiple,
       @DateTimeConverter() final DateTime? expiresAt,
-      required final List<NotePollChoice> choices}) = _$_NotePoll;
+      required final List<NotePollChoice> choices}) = _$NotePollImpl;
 
-  factory _NotePoll.fromJson(Map<String, dynamic> json) = _$_NotePoll.fromJson;
+  factory _NotePoll.fromJson(Map<String, dynamic> json) =
+      _$NotePollImpl.fromJson;
 
   @override
   bool get multiple;
@@ -1280,7 +1287,7 @@ abstract class _NotePoll implements NotePoll {
   List<NotePollChoice> get choices;
   @override
   @JsonKey(ignore: true)
-  _$$_NotePollCopyWith<_$_NotePoll> get copyWith =>
+  _$$NotePollImplCopyWith<_$NotePollImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1344,22 +1351,22 @@ class _$NotePollChoiceCopyWithImpl<$Res, $Val extends NotePollChoice>
 }
 
 /// @nodoc
-abstract class _$$_NotePollChoiceCopyWith<$Res>
+abstract class _$$NotePollChoiceImplCopyWith<$Res>
     implements $NotePollChoiceCopyWith<$Res> {
-  factory _$$_NotePollChoiceCopyWith(
-          _$_NotePollChoice value, $Res Function(_$_NotePollChoice) then) =
-      __$$_NotePollChoiceCopyWithImpl<$Res>;
+  factory _$$NotePollChoiceImplCopyWith(_$NotePollChoiceImpl value,
+          $Res Function(_$NotePollChoiceImpl) then) =
+      __$$NotePollChoiceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String text, int votes, bool isVoted});
 }
 
 /// @nodoc
-class __$$_NotePollChoiceCopyWithImpl<$Res>
-    extends _$NotePollChoiceCopyWithImpl<$Res, _$_NotePollChoice>
-    implements _$$_NotePollChoiceCopyWith<$Res> {
-  __$$_NotePollChoiceCopyWithImpl(
-      _$_NotePollChoice _value, $Res Function(_$_NotePollChoice) _then)
+class __$$NotePollChoiceImplCopyWithImpl<$Res>
+    extends _$NotePollChoiceCopyWithImpl<$Res, _$NotePollChoiceImpl>
+    implements _$$NotePollChoiceImplCopyWith<$Res> {
+  __$$NotePollChoiceImplCopyWithImpl(
+      _$NotePollChoiceImpl _value, $Res Function(_$NotePollChoiceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1369,7 +1376,7 @@ class __$$_NotePollChoiceCopyWithImpl<$Res>
     Object? votes = null,
     Object? isVoted = null,
   }) {
-    return _then(_$_NotePollChoice(
+    return _then(_$NotePollChoiceImpl(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -1388,12 +1395,12 @@ class __$$_NotePollChoiceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NotePollChoice implements _NotePollChoice {
-  const _$_NotePollChoice(
+class _$NotePollChoiceImpl implements _NotePollChoice {
+  const _$NotePollChoiceImpl(
       {required this.text, required this.votes, required this.isVoted});
 
-  factory _$_NotePollChoice.fromJson(Map<String, dynamic> json) =>
-      _$$_NotePollChoiceFromJson(json);
+  factory _$NotePollChoiceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NotePollChoiceImplFromJson(json);
 
   @override
   final String text;
@@ -1411,7 +1418,7 @@ class _$_NotePollChoice implements _NotePollChoice {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotePollChoice &&
+            other is _$NotePollChoiceImpl &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.votes, votes) || other.votes == votes) &&
             (identical(other.isVoted, isVoted) || other.isVoted == isVoted));
@@ -1424,12 +1431,13 @@ class _$_NotePollChoice implements _NotePollChoice {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NotePollChoiceCopyWith<_$_NotePollChoice> get copyWith =>
-      __$$_NotePollChoiceCopyWithImpl<_$_NotePollChoice>(this, _$identity);
+  _$$NotePollChoiceImplCopyWith<_$NotePollChoiceImpl> get copyWith =>
+      __$$NotePollChoiceImplCopyWithImpl<_$NotePollChoiceImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotePollChoiceToJson(
+    return _$$NotePollChoiceImplToJson(
       this,
     );
   }
@@ -1439,10 +1447,10 @@ abstract class _NotePollChoice implements NotePollChoice {
   const factory _NotePollChoice(
       {required final String text,
       required final int votes,
-      required final bool isVoted}) = _$_NotePollChoice;
+      required final bool isVoted}) = _$NotePollChoiceImpl;
 
   factory _NotePollChoice.fromJson(Map<String, dynamic> json) =
-      _$_NotePollChoice.fromJson;
+      _$NotePollChoiceImpl.fromJson;
 
   @override
   String get text;
@@ -1452,6 +1460,6 @@ abstract class _NotePollChoice implements NotePollChoice {
   bool get isVoted;
   @override
   @JsonKey(ignore: true)
-  _$$_NotePollChoiceCopyWith<_$_NotePollChoice> get copyWith =>
+  _$$NotePollChoiceImplCopyWith<_$NotePollChoiceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

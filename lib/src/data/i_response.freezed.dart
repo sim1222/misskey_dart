@@ -31,8 +31,8 @@ mixin _$IResponse {
   bool get isCat => throw _privateConstructorUsedError;
   @EmojisConverter()
   Map<String, String>? get emojis => throw _privateConstructorUsedError;
-  String? get onlineStatus => throw _privateConstructorUsedError;
-  List<UserBadgeRole> get badgeRoles => throw _privateConstructorUsedError;
+  String? get onlineStatus =>
+      throw _privateConstructorUsedError; // required List<UserBadgeRole> badgeRoles,
   @NullableUriConverter()
   Uri? get url => throw _privateConstructorUsedError;
   @NullableUriConverter()
@@ -92,16 +92,12 @@ mixin _$IResponse {
       throw _privateConstructorUsedError;
   @MuteWordsConverter()
   List<MuteWord> get mutedWords => throw _privateConstructorUsedError;
-  List<String> get mutedInstances => throw _privateConstructorUsedError;
-  @Deprecated("Depracted from Misskey 2023.9.2")
+  List<String> get mutedInstances =>
+      throw _privateConstructorUsedError; // @Deprecated("Depracted from Misskey 2023.9.2")
   List<String>? get mutingNotificationTypes =>
-      throw _privateConstructorUsedError;
-  dynamic get notificationRecieveConfig => throw _privateConstructorUsedError;
-  List<String> get emailNotificationTypes =>
-      throw _privateConstructorUsedError; //required bool showTimelineReplies,
-  List<UserAchievement> get achievements => throw _privateConstructorUsedError;
-  int get loggedInDays => throw _privateConstructorUsedError;
-  UserPolicies get policies => throw _privateConstructorUsedError;
+      throw _privateConstructorUsedError; // dynamic notificationRecieveConfig,
+  List<String> get emailNotificationTypes => throw _privateConstructorUsedError;
+  bool get showTimelineReplies => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -125,7 +121,6 @@ abstract class $IResponseCopyWith<$Res> {
       bool isCat,
       @EmojisConverter() Map<String, String>? emojis,
       String? onlineStatus,
-      List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
       @DateTimeConverter() DateTime createdAt,
@@ -176,15 +171,9 @@ abstract class $IResponseCopyWith<$Res> {
       List<AnnouncementsResponse> unreadAnnouncements,
       @MuteWordsConverter() List<MuteWord> mutedWords,
       List<String> mutedInstances,
-      @Deprecated("Depracted from Misskey 2023.9.2")
       List<String>? mutingNotificationTypes,
-      dynamic notificationRecieveConfig,
       List<String> emailNotificationTypes,
-      List<UserAchievement> achievements,
-      int loggedInDays,
-      UserPolicies policies});
-
-  $UserPoliciesCopyWith<$Res> get policies;
+      bool showTimelineReplies});
 }
 
 /// @nodoc
@@ -210,7 +199,6 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
     Object? isCat = null,
     Object? emojis = freezed,
     Object? onlineStatus = freezed,
-    Object? badgeRoles = null,
     Object? url = freezed,
     Object? uri = freezed,
     Object? createdAt = null,
@@ -262,11 +250,8 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
     Object? mutedWords = null,
     Object? mutedInstances = null,
     Object? mutingNotificationTypes = freezed,
-    Object? notificationRecieveConfig = freezed,
     Object? emailNotificationTypes = null,
-    Object? achievements = null,
-    Object? loggedInDays = null,
-    Object? policies = null,
+    Object? showTimelineReplies = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -309,10 +294,6 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
               as String?,
-      badgeRoles: null == badgeRoles
-          ? _value.badgeRoles
-          : badgeRoles // ignore: cast_nullable_to_non_nullable
-              as List<UserBadgeRole>,
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -517,43 +498,24 @@ class _$IResponseCopyWithImpl<$Res, $Val extends IResponse>
           ? _value.mutingNotificationTypes
           : mutingNotificationTypes // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      notificationRecieveConfig: freezed == notificationRecieveConfig
-          ? _value.notificationRecieveConfig
-          : notificationRecieveConfig // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       emailNotificationTypes: null == emailNotificationTypes
           ? _value.emailNotificationTypes
           : emailNotificationTypes // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      achievements: null == achievements
-          ? _value.achievements
-          : achievements // ignore: cast_nullable_to_non_nullable
-              as List<UserAchievement>,
-      loggedInDays: null == loggedInDays
-          ? _value.loggedInDays
-          : loggedInDays // ignore: cast_nullable_to_non_nullable
-              as int,
-      policies: null == policies
-          ? _value.policies
-          : policies // ignore: cast_nullable_to_non_nullable
-              as UserPolicies,
+      showTimelineReplies: null == showTimelineReplies
+          ? _value.showTimelineReplies
+          : showTimelineReplies // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserPoliciesCopyWith<$Res> get policies {
-    return $UserPoliciesCopyWith<$Res>(_value.policies, (value) {
-      return _then(_value.copyWith(policies: value) as $Val);
-    });
   }
 }
 
 /// @nodoc
-abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
-  factory _$$_IResponseCopyWith(
-          _$_IResponse value, $Res Function(_$_IResponse) then) =
-      __$$_IResponseCopyWithImpl<$Res>;
+abstract class _$$IResponseImplCopyWith<$Res>
+    implements $IResponseCopyWith<$Res> {
+  factory _$$IResponseImplCopyWith(
+          _$IResponseImpl value, $Res Function(_$IResponseImpl) then) =
+      __$$IResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -567,7 +529,6 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       bool isCat,
       @EmojisConverter() Map<String, String>? emojis,
       String? onlineStatus,
-      List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() Uri? url,
       @NullableUriConverter() Uri? uri,
       @DateTimeConverter() DateTime createdAt,
@@ -618,24 +579,17 @@ abstract class _$$_IResponseCopyWith<$Res> implements $IResponseCopyWith<$Res> {
       List<AnnouncementsResponse> unreadAnnouncements,
       @MuteWordsConverter() List<MuteWord> mutedWords,
       List<String> mutedInstances,
-      @Deprecated("Depracted from Misskey 2023.9.2")
       List<String>? mutingNotificationTypes,
-      dynamic notificationRecieveConfig,
       List<String> emailNotificationTypes,
-      List<UserAchievement> achievements,
-      int loggedInDays,
-      UserPolicies policies});
-
-  @override
-  $UserPoliciesCopyWith<$Res> get policies;
+      bool showTimelineReplies});
 }
 
 /// @nodoc
-class __$$_IResponseCopyWithImpl<$Res>
-    extends _$IResponseCopyWithImpl<$Res, _$_IResponse>
-    implements _$$_IResponseCopyWith<$Res> {
-  __$$_IResponseCopyWithImpl(
-      _$_IResponse _value, $Res Function(_$_IResponse) _then)
+class __$$IResponseImplCopyWithImpl<$Res>
+    extends _$IResponseCopyWithImpl<$Res, _$IResponseImpl>
+    implements _$$IResponseImplCopyWith<$Res> {
+  __$$IResponseImplCopyWithImpl(
+      _$IResponseImpl _value, $Res Function(_$IResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -651,7 +605,6 @@ class __$$_IResponseCopyWithImpl<$Res>
     Object? isCat = null,
     Object? emojis = freezed,
     Object? onlineStatus = freezed,
-    Object? badgeRoles = null,
     Object? url = freezed,
     Object? uri = freezed,
     Object? createdAt = null,
@@ -703,13 +656,10 @@ class __$$_IResponseCopyWithImpl<$Res>
     Object? mutedWords = null,
     Object? mutedInstances = null,
     Object? mutingNotificationTypes = freezed,
-    Object? notificationRecieveConfig = freezed,
     Object? emailNotificationTypes = null,
-    Object? achievements = null,
-    Object? loggedInDays = null,
-    Object? policies = null,
+    Object? showTimelineReplies = null,
   }) {
-    return _then(_$_IResponse(
+    return _then(_$IResponseImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -750,10 +700,6 @@ class __$$_IResponseCopyWithImpl<$Res>
           ? _value.onlineStatus
           : onlineStatus // ignore: cast_nullable_to_non_nullable
               as String?,
-      badgeRoles: null == badgeRoles
-          ? _value._badgeRoles
-          : badgeRoles // ignore: cast_nullable_to_non_nullable
-              as List<UserBadgeRole>,
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -958,34 +904,22 @@ class __$$_IResponseCopyWithImpl<$Res>
           ? _value._mutingNotificationTypes
           : mutingNotificationTypes // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      notificationRecieveConfig: freezed == notificationRecieveConfig
-          ? _value.notificationRecieveConfig
-          : notificationRecieveConfig // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       emailNotificationTypes: null == emailNotificationTypes
           ? _value._emailNotificationTypes
           : emailNotificationTypes // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      achievements: null == achievements
-          ? _value._achievements
-          : achievements // ignore: cast_nullable_to_non_nullable
-              as List<UserAchievement>,
-      loggedInDays: null == loggedInDays
-          ? _value.loggedInDays
-          : loggedInDays // ignore: cast_nullable_to_non_nullable
-              as int,
-      policies: null == policies
-          ? _value.policies
-          : policies // ignore: cast_nullable_to_non_nullable
-              as UserPolicies,
+      showTimelineReplies: null == showTimelineReplies
+          ? _value.showTimelineReplies
+          : showTimelineReplies // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_IResponse implements _IResponse {
-  const _$_IResponse(
+class _$IResponseImpl implements _IResponse {
+  const _$IResponseImpl(
       {required this.id,
       this.name,
       required this.username,
@@ -996,7 +930,6 @@ class _$_IResponse implements _IResponse {
       required this.isCat,
       @EmojisConverter() final Map<String, String>? emojis = const {},
       this.onlineStatus,
-      required final List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() this.url,
       @NullableUriConverter() this.uri,
       @DateTimeConverter() required this.createdAt,
@@ -1047,15 +980,10 @@ class _$_IResponse implements _IResponse {
       final List<AnnouncementsResponse> unreadAnnouncements = const [],
       @MuteWordsConverter() required final List<MuteWord> mutedWords,
       required final List<String> mutedInstances,
-      @Deprecated("Depracted from Misskey 2023.9.2")
       final List<String>? mutingNotificationTypes,
-      this.notificationRecieveConfig,
       required final List<String> emailNotificationTypes,
-      required final List<UserAchievement> achievements,
-      required this.loggedInDays,
-      required this.policies})
+      required this.showTimelineReplies})
       : _emojis = emojis,
-        _badgeRoles = badgeRoles,
         _fields = fields,
         _pinnedNoteIds = pinnedNoteIds,
         _pinnedPage = pinnedPage,
@@ -1063,11 +991,10 @@ class _$_IResponse implements _IResponse {
         _mutedWords = mutedWords,
         _mutedInstances = mutedInstances,
         _mutingNotificationTypes = mutingNotificationTypes,
-        _emailNotificationTypes = emailNotificationTypes,
-        _achievements = achievements;
+        _emailNotificationTypes = emailNotificationTypes;
 
-  factory _$_IResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_IResponseFromJson(json);
+  factory _$IResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$IResponseImplFromJson(json);
 
   @override
   final String id;
@@ -1100,14 +1027,7 @@ class _$_IResponse implements _IResponse {
 
   @override
   final String? onlineStatus;
-  final List<UserBadgeRole> _badgeRoles;
-  @override
-  List<UserBadgeRole> get badgeRoles {
-    if (_badgeRoles is EqualUnmodifiableListView) return _badgeRoles;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_badgeRoles);
-  }
-
+// required List<UserBadgeRole> badgeRoles,
   @override
   @NullableUriConverter()
   final Uri? url;
@@ -1260,9 +1180,10 @@ class _$_IResponse implements _IResponse {
     return EqualUnmodifiableListView(_mutedInstances);
   }
 
+// @Deprecated("Depracted from Misskey 2023.9.2")
   final List<String>? _mutingNotificationTypes;
+// @Deprecated("Depracted from Misskey 2023.9.2")
   @override
-  @Deprecated("Depracted from Misskey 2023.9.2")
   List<String>? get mutingNotificationTypes {
     final value = _mutingNotificationTypes;
     if (value == null) return null;
@@ -1272,9 +1193,9 @@ class _$_IResponse implements _IResponse {
     return EqualUnmodifiableListView(value);
   }
 
-  @override
-  final dynamic notificationRecieveConfig;
+// dynamic notificationRecieveConfig,
   final List<String> _emailNotificationTypes;
+// dynamic notificationRecieveConfig,
   @override
   List<String> get emailNotificationTypes {
     if (_emailNotificationTypes is EqualUnmodifiableListView)
@@ -1283,31 +1204,19 @@ class _$_IResponse implements _IResponse {
     return EqualUnmodifiableListView(_emailNotificationTypes);
   }
 
-//required bool showTimelineReplies,
-  final List<UserAchievement> _achievements;
-//required bool showTimelineReplies,
   @override
-  List<UserAchievement> get achievements {
-    if (_achievements is EqualUnmodifiableListView) return _achievements;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_achievements);
-  }
-
-  @override
-  final int loggedInDays;
-  @override
-  final UserPolicies policies;
+  final bool showTimelineReplies;
 
   @override
   String toString() {
-    return 'IResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, isBot: $isBot, isCat: $isCat, emojis: $emojis, onlineStatus: $onlineStatus, badgeRoles: $badgeRoles, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, notificationRecieveConfig: $notificationRecieveConfig, emailNotificationTypes: $emailNotificationTypes, achievements: $achievements, loggedInDays: $loggedInDays, policies: $policies)';
+    return 'IResponse(id: $id, name: $name, username: $username, host: $host, avatarUrl: $avatarUrl, avatarBlurhash: $avatarBlurhash, isBot: $isBot, isCat: $isCat, emojis: $emojis, onlineStatus: $onlineStatus, url: $url, uri: $uri, createdAt: $createdAt, updatedAt: $updatedAt, lastFetchedAt: $lastFetchedAt, bannerUrl: $bannerUrl, bannerBlurhash: $bannerBlurhash, isLocked: $isLocked, isSilenced: $isSilenced, isSuspended: $isSuspended, description: $description, location: $location, birthday: $birthday, lang: $lang, fields: $fields, followersCount: $followersCount, followingCount: $followingCount, notesCount: $notesCount, pinnedNoteIds: $pinnedNoteIds, pinnedPageId: $pinnedPageId, pinnedPage: $pinnedPage, publicReactions: $publicReactions, ffVisibility: $ffVisibility, twoFactorEnabled: $twoFactorEnabled, usePasswordLessLogin: $usePasswordLessLogin, securityKeys: $securityKeys, avatarId: $avatarId, bannerId: $bannerId, isModerator: $isModerator, isAdmin: $isAdmin, injectFeaturedNote: $injectFeaturedNote, receiveAnnouncementEmail: $receiveAnnouncementEmail, alwaysMarkNsfw: $alwaysMarkNsfw, autoSensitive: $autoSensitive, carefulBot: $carefulBot, autoAcceptFollowed: $autoAcceptFollowed, noCrawle: $noCrawle, isExplorable: $isExplorable, isDeleted: $isDeleted, hideOnlineStatus: $hideOnlineStatus, hasUnreadSpecifiedNotes: $hasUnreadSpecifiedNotes, hasUnreadMentions: $hasUnreadMentions, hasUnreadAnnouncement: $hasUnreadAnnouncement, hasUnreadAntenna: $hasUnreadAntenna, hasUnreadChannel: $hasUnreadChannel, hasUnreadNotification: $hasUnreadNotification, hasPendingReceivedFollowRequest: $hasPendingReceivedFollowRequest, unreadAnnouncements: $unreadAnnouncements, mutedWords: $mutedWords, mutedInstances: $mutedInstances, mutingNotificationTypes: $mutingNotificationTypes, emailNotificationTypes: $emailNotificationTypes, showTimelineReplies: $showTimelineReplies)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IResponse &&
+            other is _$IResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.username, username) ||
@@ -1322,8 +1231,6 @@ class _$_IResponse implements _IResponse {
             const DeepCollectionEquality().equals(other._emojis, _emojis) &&
             (identical(other.onlineStatus, onlineStatus) ||
                 other.onlineStatus == onlineStatus) &&
-            const DeepCollectionEquality()
-                .equals(other._badgeRoles, _badgeRoles) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.createdAt, createdAt) ||
@@ -1403,7 +1310,8 @@ class _$_IResponse implements _IResponse {
                 other.hasUnreadSpecifiedNotes == hasUnreadSpecifiedNotes) &&
             (identical(other.hasUnreadMentions, hasUnreadMentions) ||
                 other.hasUnreadMentions == hasUnreadMentions) &&
-            (identical(other.hasUnreadAnnouncement, hasUnreadAnnouncement) || other.hasUnreadAnnouncement == hasUnreadAnnouncement) &&
+            (identical(other.hasUnreadAnnouncement, hasUnreadAnnouncement) ||
+                other.hasUnreadAnnouncement == hasUnreadAnnouncement) &&
             (identical(other.hasUnreadAntenna, hasUnreadAntenna) || other.hasUnreadAntenna == hasUnreadAntenna) &&
             (identical(other.hasUnreadChannel, hasUnreadChannel) || other.hasUnreadChannel == hasUnreadChannel) &&
             (identical(other.hasUnreadNotification, hasUnreadNotification) || other.hasUnreadNotification == hasUnreadNotification) &&
@@ -1412,11 +1320,8 @@ class _$_IResponse implements _IResponse {
             const DeepCollectionEquality().equals(other._mutedWords, _mutedWords) &&
             const DeepCollectionEquality().equals(other._mutedInstances, _mutedInstances) &&
             const DeepCollectionEquality().equals(other._mutingNotificationTypes, _mutingNotificationTypes) &&
-            const DeepCollectionEquality().equals(other.notificationRecieveConfig, notificationRecieveConfig) &&
             const DeepCollectionEquality().equals(other._emailNotificationTypes, _emailNotificationTypes) &&
-            const DeepCollectionEquality().equals(other._achievements, _achievements) &&
-            (identical(other.loggedInDays, loggedInDays) || other.loggedInDays == loggedInDays) &&
-            (identical(other.policies, policies) || other.policies == policies));
+            (identical(other.showTimelineReplies, showTimelineReplies) || other.showTimelineReplies == showTimelineReplies));
   }
 
   @JsonKey(ignore: true)
@@ -1433,7 +1338,6 @@ class _$_IResponse implements _IResponse {
         isCat,
         const DeepCollectionEquality().hash(_emojis),
         onlineStatus,
-        const DeepCollectionEquality().hash(_badgeRoles),
         url,
         uri,
         createdAt,
@@ -1485,22 +1389,19 @@ class _$_IResponse implements _IResponse {
         const DeepCollectionEquality().hash(_mutedWords),
         const DeepCollectionEquality().hash(_mutedInstances),
         const DeepCollectionEquality().hash(_mutingNotificationTypes),
-        const DeepCollectionEquality().hash(notificationRecieveConfig),
         const DeepCollectionEquality().hash(_emailNotificationTypes),
-        const DeepCollectionEquality().hash(_achievements),
-        loggedInDays,
-        policies
+        showTimelineReplies
       ]);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IResponseCopyWith<_$_IResponse> get copyWith =>
-      __$$_IResponseCopyWithImpl<_$_IResponse>(this, _$identity);
+  _$$IResponseImplCopyWith<_$IResponseImpl> get copyWith =>
+      __$$IResponseImplCopyWithImpl<_$IResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IResponseToJson(
+    return _$$IResponseImplToJson(
       this,
     );
   }
@@ -1518,7 +1419,6 @@ abstract class _IResponse implements IResponse {
       required final bool isCat,
       @EmojisConverter() final Map<String, String>? emojis,
       final String? onlineStatus,
-      required final List<UserBadgeRole> badgeRoles,
       @NullableUriConverter() final Uri? url,
       @NullableUriConverter() final Uri? uri,
       @DateTimeConverter() required final DateTime createdAt,
@@ -1569,16 +1469,12 @@ abstract class _IResponse implements IResponse {
       final List<AnnouncementsResponse> unreadAnnouncements,
       @MuteWordsConverter() required final List<MuteWord> mutedWords,
       required final List<String> mutedInstances,
-      @Deprecated("Depracted from Misskey 2023.9.2")
       final List<String>? mutingNotificationTypes,
-      final dynamic notificationRecieveConfig,
       required final List<String> emailNotificationTypes,
-      required final List<UserAchievement> achievements,
-      required final int loggedInDays,
-      required final UserPolicies policies}) = _$_IResponse;
+      required final bool showTimelineReplies}) = _$IResponseImpl;
 
   factory _IResponse.fromJson(Map<String, dynamic> json) =
-      _$_IResponse.fromJson;
+      _$IResponseImpl.fromJson;
 
   @override
   String get id;
@@ -1602,9 +1498,7 @@ abstract class _IResponse implements IResponse {
   Map<String, String>? get emojis;
   @override
   String? get onlineStatus;
-  @override
-  List<UserBadgeRole> get badgeRoles;
-  @override
+  @override // required List<UserBadgeRole> badgeRoles,
   @NullableUriConverter()
   Uri? get url;
   @override
@@ -1712,21 +1606,14 @@ abstract class _IResponse implements IResponse {
   List<MuteWord> get mutedWords;
   @override
   List<String> get mutedInstances;
-  @override
-  @Deprecated("Depracted from Misskey 2023.9.2")
+  @override // @Deprecated("Depracted from Misskey 2023.9.2")
   List<String>? get mutingNotificationTypes;
-  @override
-  dynamic get notificationRecieveConfig;
-  @override
+  @override // dynamic notificationRecieveConfig,
   List<String> get emailNotificationTypes;
-  @override //required bool showTimelineReplies,
-  List<UserAchievement> get achievements;
   @override
-  int get loggedInDays;
-  @override
-  UserPolicies get policies;
+  bool get showTimelineReplies;
   @override
   @JsonKey(ignore: true)
-  _$$_IResponseCopyWith<_$_IResponse> get copyWith =>
+  _$$IResponseImplCopyWith<_$IResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

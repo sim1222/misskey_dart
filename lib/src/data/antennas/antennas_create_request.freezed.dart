@@ -128,11 +128,12 @@ class _$AntennasCreateRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AntennasCreateRequestCopyWith<$Res>
+abstract class _$$AntennasCreateRequestImplCopyWith<$Res>
     implements $AntennasCreateRequestCopyWith<$Res> {
-  factory _$$_AntennasCreateRequestCopyWith(_$_AntennasCreateRequest value,
-          $Res Function(_$_AntennasCreateRequest) then) =
-      __$$_AntennasCreateRequestCopyWithImpl<$Res>;
+  factory _$$AntennasCreateRequestImplCopyWith(
+          _$AntennasCreateRequestImpl value,
+          $Res Function(_$AntennasCreateRequestImpl) then) =
+      __$$AntennasCreateRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -149,11 +150,12 @@ abstract class _$$_AntennasCreateRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AntennasCreateRequestCopyWithImpl<$Res>
-    extends _$AntennasCreateRequestCopyWithImpl<$Res, _$_AntennasCreateRequest>
-    implements _$$_AntennasCreateRequestCopyWith<$Res> {
-  __$$_AntennasCreateRequestCopyWithImpl(_$_AntennasCreateRequest _value,
-      $Res Function(_$_AntennasCreateRequest) _then)
+class __$$AntennasCreateRequestImplCopyWithImpl<$Res>
+    extends _$AntennasCreateRequestCopyWithImpl<$Res,
+        _$AntennasCreateRequestImpl>
+    implements _$$AntennasCreateRequestImplCopyWith<$Res> {
+  __$$AntennasCreateRequestImplCopyWithImpl(_$AntennasCreateRequestImpl _value,
+      $Res Function(_$AntennasCreateRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -170,7 +172,7 @@ class __$$_AntennasCreateRequestCopyWithImpl<$Res>
     Object? withFile = null,
     Object? notify = null,
   }) {
-    return _then(_$_AntennasCreateRequest(
+    return _then(_$AntennasCreateRequestImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -217,8 +219,8 @@ class __$$_AntennasCreateRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AntennasCreateRequest implements _AntennasCreateRequest {
-  const _$_AntennasCreateRequest(
+class _$AntennasCreateRequestImpl implements _AntennasCreateRequest {
+  const _$AntennasCreateRequestImpl(
       {required this.name,
       required this.src,
       this.userListId,
@@ -233,8 +235,8 @@ class _$_AntennasCreateRequest implements _AntennasCreateRequest {
         _excludeKeywords = excludeKeywords,
         _users = users;
 
-  factory _$_AntennasCreateRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_AntennasCreateRequestFromJson(json);
+  factory _$AntennasCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AntennasCreateRequestImplFromJson(json);
 
   @override
   final String name;
@@ -284,7 +286,7 @@ class _$_AntennasCreateRequest implements _AntennasCreateRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AntennasCreateRequest &&
+            other is _$AntennasCreateRequestImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.src, src) || other.src == src) &&
             (identical(other.userListId, userListId) ||
@@ -320,13 +322,13 @@ class _$_AntennasCreateRequest implements _AntennasCreateRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AntennasCreateRequestCopyWith<_$_AntennasCreateRequest> get copyWith =>
-      __$$_AntennasCreateRequestCopyWithImpl<_$_AntennasCreateRequest>(
-          this, _$identity);
+  _$$AntennasCreateRequestImplCopyWith<_$AntennasCreateRequestImpl>
+      get copyWith => __$$AntennasCreateRequestImplCopyWithImpl<
+          _$AntennasCreateRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AntennasCreateRequestToJson(
+    return _$$AntennasCreateRequestImplToJson(
       this,
     );
   }
@@ -343,10 +345,10 @@ abstract class _AntennasCreateRequest implements AntennasCreateRequest {
       required final bool caseSensitive,
       required final bool withReplies,
       required final bool withFile,
-      required final bool notify}) = _$_AntennasCreateRequest;
+      required final bool notify}) = _$AntennasCreateRequestImpl;
 
   factory _AntennasCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$_AntennasCreateRequest.fromJson;
+      _$AntennasCreateRequestImpl.fromJson;
 
   @override
   String get name;
@@ -370,6 +372,6 @@ abstract class _AntennasCreateRequest implements AntennasCreateRequest {
   bool get notify;
   @override
   @JsonKey(ignore: true)
-  _$$_AntennasCreateRequestCopyWith<_$_AntennasCreateRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AntennasCreateRequestImplCopyWith<_$AntennasCreateRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

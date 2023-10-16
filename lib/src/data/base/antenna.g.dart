@@ -6,7 +6,8 @@ part of 'antenna.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Antenna _$$_AntennaFromJson(Map<String, dynamic> json) => _$_Antenna(
+_$AntennaImpl _$$AntennaImplFromJson(Map<String, dynamic> json) =>
+    _$AntennaImpl(
       id: json['id'] as String,
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -28,7 +29,7 @@ _$_Antenna _$$_AntennaFromJson(Map<String, dynamic> json) => _$_Antenna(
       hasUnreadNote: json['hasUnreadNote'] as bool,
     );
 
-Map<String, dynamic> _$$_AntennaToJson(_$_Antenna instance) =>
+Map<String, dynamic> _$$AntennaImplToJson(_$AntennaImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),

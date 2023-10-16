@@ -35,11 +35,11 @@ mixin _$MetaResponse {
   String get feedbackUrl => throw _privateConstructorUsedError;
   String? get defaultDarkTheme => throw _privateConstructorUsedError;
   String? get defaultLightTheme => throw _privateConstructorUsedError;
-  bool get disableRegistration =>
-      throw _privateConstructorUsedError; //required bool disableLocalTimeline,
-//required bool disableGlobalTimeline,
-//required int driveCapacityPerLocalUserMb,
-//required int driveCapacityPerRemoteUserMb,
+  bool get disableRegistration => throw _privateConstructorUsedError;
+  bool get disableLocalTimeline => throw _privateConstructorUsedError;
+  bool get disableGlobalTimeline => throw _privateConstructorUsedError;
+  int get driveCapacityPerLocalUserMb => throw _privateConstructorUsedError;
+  int get driveCapacityPerRemoteUserMb => throw _privateConstructorUsedError;
   bool get emailRequiredForSignup => throw _privateConstructorUsedError;
   bool get enableHcaptcha => throw _privateConstructorUsedError;
   String? get hcaptchaSiteKey => throw _privateConstructorUsedError;
@@ -61,8 +61,8 @@ mixin _$MetaResponse {
   Uri? get backgroundImageUrl => throw _privateConstructorUsedError;
   @NullableUriConverter()
   Uri? get logoImageUrl => throw _privateConstructorUsedError;
-  int get maxNoteTextLength =>
-      throw _privateConstructorUsedError; //required List<MetaEmoji> emojis,
+  int get maxNoteTextLength => throw _privateConstructorUsedError;
+  List<MetaEmoji> get emojis => throw _privateConstructorUsedError;
   List<MetaAd> get ads => throw _privateConstructorUsedError;
   bool? get requireSetup => throw _privateConstructorUsedError;
   bool? get enableEmail =>
@@ -71,8 +71,8 @@ mixin _$MetaResponse {
 //required bool enableDiscordIntegration,
   bool? get enableServiceWorker => throw _privateConstructorUsedError;
   bool? get translatorAvailable => throw _privateConstructorUsedError;
-  String? get proxyAccountName => throw _privateConstructorUsedError;
-  String? get mediaProxy => throw _privateConstructorUsedError;
+  String? get proxyAccountName =>
+      throw _privateConstructorUsedError; // String? mediaProxy,
   bool? get cacheRemoteFiles => throw _privateConstructorUsedError;
   MetaFeature? get features => throw _privateConstructorUsedError;
 
@@ -102,6 +102,10 @@ abstract class $MetaResponseCopyWith<$Res> {
       String? defaultDarkTheme,
       String? defaultLightTheme,
       bool disableRegistration,
+      bool disableLocalTimeline,
+      bool disableGlobalTimeline,
+      int driveCapacityPerLocalUserMb,
+      int driveCapacityPerRemoteUserMb,
       bool emailRequiredForSignup,
       bool enableHcaptcha,
       String? hcaptchaSiteKey,
@@ -118,13 +122,13 @@ abstract class $MetaResponseCopyWith<$Res> {
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
       int maxNoteTextLength,
+      List<MetaEmoji> emojis,
       List<MetaAd> ads,
       bool? requireSetup,
       bool? enableEmail,
       bool? enableServiceWorker,
       bool? translatorAvailable,
       String? proxyAccountName,
-      String? mediaProxy,
       bool? cacheRemoteFiles,
       MetaFeature? features});
 
@@ -157,6 +161,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? defaultDarkTheme = freezed,
     Object? defaultLightTheme = freezed,
     Object? disableRegistration = null,
+    Object? disableLocalTimeline = null,
+    Object? disableGlobalTimeline = null,
+    Object? driveCapacityPerLocalUserMb = null,
+    Object? driveCapacityPerRemoteUserMb = null,
     Object? emailRequiredForSignup = null,
     Object? enableHcaptcha = null,
     Object? hcaptchaSiteKey = freezed,
@@ -173,13 +181,13 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
     Object? backgroundImageUrl = freezed,
     Object? logoImageUrl = freezed,
     Object? maxNoteTextLength = null,
+    Object? emojis = null,
     Object? ads = null,
     Object? requireSetup = freezed,
     Object? enableEmail = freezed,
     Object? enableServiceWorker = freezed,
     Object? translatorAvailable = freezed,
     Object? proxyAccountName = freezed,
-    Object? mediaProxy = freezed,
     Object? cacheRemoteFiles = freezed,
     Object? features = freezed,
   }) {
@@ -236,6 +244,22 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.disableRegistration
           : disableRegistration // ignore: cast_nullable_to_non_nullable
               as bool,
+      disableLocalTimeline: null == disableLocalTimeline
+          ? _value.disableLocalTimeline
+          : disableLocalTimeline // ignore: cast_nullable_to_non_nullable
+              as bool,
+      disableGlobalTimeline: null == disableGlobalTimeline
+          ? _value.disableGlobalTimeline
+          : disableGlobalTimeline // ignore: cast_nullable_to_non_nullable
+              as bool,
+      driveCapacityPerLocalUserMb: null == driveCapacityPerLocalUserMb
+          ? _value.driveCapacityPerLocalUserMb
+          : driveCapacityPerLocalUserMb // ignore: cast_nullable_to_non_nullable
+              as int,
+      driveCapacityPerRemoteUserMb: null == driveCapacityPerRemoteUserMb
+          ? _value.driveCapacityPerRemoteUserMb
+          : driveCapacityPerRemoteUserMb // ignore: cast_nullable_to_non_nullable
+              as int,
       emailRequiredForSignup: null == emailRequiredForSignup
           ? _value.emailRequiredForSignup
           : emailRequiredForSignup // ignore: cast_nullable_to_non_nullable
@@ -300,6 +324,10 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
           ? _value.maxNoteTextLength
           : maxNoteTextLength // ignore: cast_nullable_to_non_nullable
               as int,
+      emojis: null == emojis
+          ? _value.emojis
+          : emojis // ignore: cast_nullable_to_non_nullable
+              as List<MetaEmoji>,
       ads: null == ads
           ? _value.ads
           : ads // ignore: cast_nullable_to_non_nullable
@@ -323,10 +351,6 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
       proxyAccountName: freezed == proxyAccountName
           ? _value.proxyAccountName
           : proxyAccountName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mediaProxy: freezed == mediaProxy
-          ? _value.mediaProxy
-          : mediaProxy // ignore: cast_nullable_to_non_nullable
               as String?,
       cacheRemoteFiles: freezed == cacheRemoteFiles
           ? _value.cacheRemoteFiles
@@ -353,11 +377,11 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
 }
 
 /// @nodoc
-abstract class _$$_MetaResponseCopyWith<$Res>
+abstract class _$$MetaResponseImplCopyWith<$Res>
     implements $MetaResponseCopyWith<$Res> {
-  factory _$$_MetaResponseCopyWith(
-          _$_MetaResponse value, $Res Function(_$_MetaResponse) then) =
-      __$$_MetaResponseCopyWithImpl<$Res>;
+  factory _$$MetaResponseImplCopyWith(
+          _$MetaResponseImpl value, $Res Function(_$MetaResponseImpl) then) =
+      __$$MetaResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -374,6 +398,10 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       String? defaultDarkTheme,
       String? defaultLightTheme,
       bool disableRegistration,
+      bool disableLocalTimeline,
+      bool disableGlobalTimeline,
+      int driveCapacityPerLocalUserMb,
+      int driveCapacityPerRemoteUserMb,
       bool emailRequiredForSignup,
       bool enableHcaptcha,
       String? hcaptchaSiteKey,
@@ -390,13 +418,13 @@ abstract class _$$_MetaResponseCopyWith<$Res>
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
       int maxNoteTextLength,
+      List<MetaEmoji> emojis,
       List<MetaAd> ads,
       bool? requireSetup,
       bool? enableEmail,
       bool? enableServiceWorker,
       bool? translatorAvailable,
       String? proxyAccountName,
-      String? mediaProxy,
       bool? cacheRemoteFiles,
       MetaFeature? features});
 
@@ -405,11 +433,11 @@ abstract class _$$_MetaResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MetaResponseCopyWithImpl<$Res>
-    extends _$MetaResponseCopyWithImpl<$Res, _$_MetaResponse>
-    implements _$$_MetaResponseCopyWith<$Res> {
-  __$$_MetaResponseCopyWithImpl(
-      _$_MetaResponse _value, $Res Function(_$_MetaResponse) _then)
+class __$$MetaResponseImplCopyWithImpl<$Res>
+    extends _$MetaResponseCopyWithImpl<$Res, _$MetaResponseImpl>
+    implements _$$MetaResponseImplCopyWith<$Res> {
+  __$$MetaResponseImplCopyWithImpl(
+      _$MetaResponseImpl _value, $Res Function(_$MetaResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -428,6 +456,10 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? defaultDarkTheme = freezed,
     Object? defaultLightTheme = freezed,
     Object? disableRegistration = null,
+    Object? disableLocalTimeline = null,
+    Object? disableGlobalTimeline = null,
+    Object? driveCapacityPerLocalUserMb = null,
+    Object? driveCapacityPerRemoteUserMb = null,
     Object? emailRequiredForSignup = null,
     Object? enableHcaptcha = null,
     Object? hcaptchaSiteKey = freezed,
@@ -444,17 +476,17 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? backgroundImageUrl = freezed,
     Object? logoImageUrl = freezed,
     Object? maxNoteTextLength = null,
+    Object? emojis = null,
     Object? ads = null,
     Object? requireSetup = freezed,
     Object? enableEmail = freezed,
     Object? enableServiceWorker = freezed,
     Object? translatorAvailable = freezed,
     Object? proxyAccountName = freezed,
-    Object? mediaProxy = freezed,
     Object? cacheRemoteFiles = freezed,
     Object? features = freezed,
   }) {
-    return _then(_$_MetaResponse(
+    return _then(_$MetaResponseImpl(
       maintainerName: freezed == maintainerName
           ? _value.maintainerName
           : maintainerName // ignore: cast_nullable_to_non_nullable
@@ -507,6 +539,22 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.disableRegistration
           : disableRegistration // ignore: cast_nullable_to_non_nullable
               as bool,
+      disableLocalTimeline: null == disableLocalTimeline
+          ? _value.disableLocalTimeline
+          : disableLocalTimeline // ignore: cast_nullable_to_non_nullable
+              as bool,
+      disableGlobalTimeline: null == disableGlobalTimeline
+          ? _value.disableGlobalTimeline
+          : disableGlobalTimeline // ignore: cast_nullable_to_non_nullable
+              as bool,
+      driveCapacityPerLocalUserMb: null == driveCapacityPerLocalUserMb
+          ? _value.driveCapacityPerLocalUserMb
+          : driveCapacityPerLocalUserMb // ignore: cast_nullable_to_non_nullable
+              as int,
+      driveCapacityPerRemoteUserMb: null == driveCapacityPerRemoteUserMb
+          ? _value.driveCapacityPerRemoteUserMb
+          : driveCapacityPerRemoteUserMb // ignore: cast_nullable_to_non_nullable
+              as int,
       emailRequiredForSignup: null == emailRequiredForSignup
           ? _value.emailRequiredForSignup
           : emailRequiredForSignup // ignore: cast_nullable_to_non_nullable
@@ -571,6 +619,10 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.maxNoteTextLength
           : maxNoteTextLength // ignore: cast_nullable_to_non_nullable
               as int,
+      emojis: null == emojis
+          ? _value._emojis
+          : emojis // ignore: cast_nullable_to_non_nullable
+              as List<MetaEmoji>,
       ads: null == ads
           ? _value._ads
           : ads // ignore: cast_nullable_to_non_nullable
@@ -595,10 +647,6 @@ class __$$_MetaResponseCopyWithImpl<$Res>
           ? _value.proxyAccountName
           : proxyAccountName // ignore: cast_nullable_to_non_nullable
               as String?,
-      mediaProxy: freezed == mediaProxy
-          ? _value.mediaProxy
-          : mediaProxy // ignore: cast_nullable_to_non_nullable
-              as String?,
       cacheRemoteFiles: freezed == cacheRemoteFiles
           ? _value.cacheRemoteFiles
           : cacheRemoteFiles // ignore: cast_nullable_to_non_nullable
@@ -613,8 +661,8 @@ class __$$_MetaResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MetaResponse implements _MetaResponse {
-  const _$_MetaResponse(
+class _$MetaResponseImpl implements _MetaResponse {
+  const _$MetaResponseImpl(
       {this.maintainerName,
       this.maintainerEmail,
       required this.version,
@@ -628,6 +676,10 @@ class _$_MetaResponse implements _MetaResponse {
       this.defaultDarkTheme,
       this.defaultLightTheme,
       required this.disableRegistration,
+      required this.disableLocalTimeline,
+      required this.disableGlobalTimeline,
+      required this.driveCapacityPerLocalUserMb,
+      required this.driveCapacityPerRemoteUserMb,
       required this.emailRequiredForSignup,
       required this.enableHcaptcha,
       this.hcaptchaSiteKey,
@@ -644,20 +696,21 @@ class _$_MetaResponse implements _MetaResponse {
       @NullableUriConverter() this.backgroundImageUrl,
       @NullableUriConverter() this.logoImageUrl,
       required this.maxNoteTextLength,
+      required final List<MetaEmoji> emojis,
       required final List<MetaAd> ads,
       this.requireSetup,
       this.enableEmail,
       this.enableServiceWorker,
       this.translatorAvailable,
       this.proxyAccountName,
-      this.mediaProxy,
       this.cacheRemoteFiles,
       this.features})
       : _langs = langs,
+        _emojis = emojis,
         _ads = ads;
 
-  factory _$_MetaResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_MetaResponseFromJson(json);
+  factory _$MetaResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MetaResponseImplFromJson(json);
 
   @override
   final String? maintainerName;
@@ -694,10 +747,14 @@ class _$_MetaResponse implements _MetaResponse {
   final String? defaultLightTheme;
   @override
   final bool disableRegistration;
-//required bool disableLocalTimeline,
-//required bool disableGlobalTimeline,
-//required int driveCapacityPerLocalUserMb,
-//required int driveCapacityPerRemoteUserMb,
+  @override
+  final bool disableLocalTimeline;
+  @override
+  final bool disableGlobalTimeline;
+  @override
+  final int driveCapacityPerLocalUserMb;
+  @override
+  final int driveCapacityPerRemoteUserMb;
   @override
   final bool emailRequiredForSignup;
   @override
@@ -736,9 +793,15 @@ class _$_MetaResponse implements _MetaResponse {
   final Uri? logoImageUrl;
   @override
   final int maxNoteTextLength;
-//required List<MetaEmoji> emojis,
+  final List<MetaEmoji> _emojis;
+  @override
+  List<MetaEmoji> get emojis {
+    if (_emojis is EqualUnmodifiableListView) return _emojis;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_emojis);
+  }
+
   final List<MetaAd> _ads;
-//required List<MetaEmoji> emojis,
   @override
   List<MetaAd> get ads {
     if (_ads is EqualUnmodifiableListView) return _ads;
@@ -759,8 +822,7 @@ class _$_MetaResponse implements _MetaResponse {
   final bool? translatorAvailable;
   @override
   final String? proxyAccountName;
-  @override
-  final String? mediaProxy;
+// String? mediaProxy,
   @override
   final bool? cacheRemoteFiles;
   @override
@@ -768,14 +830,14 @@ class _$_MetaResponse implements _MetaResponse {
 
   @override
   String toString() {
-    return 'MetaResponse(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, name: $name, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, swPublickey: $swPublickey, themeColor: $themeColor, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, errorImageUrl: $errorImageUrl, iconUrl: $iconUrl, backgroundImageUrl: $backgroundImageUrl, logoImageUrl: $logoImageUrl, maxNoteTextLength: $maxNoteTextLength, ads: $ads, requireSetup: $requireSetup, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, proxyAccountName: $proxyAccountName, mediaProxy: $mediaProxy, cacheRemoteFiles: $cacheRemoteFiles, features: $features)';
+    return 'MetaResponse(maintainerName: $maintainerName, maintainerEmail: $maintainerEmail, version: $version, name: $name, uri: $uri, description: $description, langs: $langs, tosUrl: $tosUrl, repositoryUrl: $repositoryUrl, feedbackUrl: $feedbackUrl, defaultDarkTheme: $defaultDarkTheme, defaultLightTheme: $defaultLightTheme, disableRegistration: $disableRegistration, disableLocalTimeline: $disableLocalTimeline, disableGlobalTimeline: $disableGlobalTimeline, driveCapacityPerLocalUserMb: $driveCapacityPerLocalUserMb, driveCapacityPerRemoteUserMb: $driveCapacityPerRemoteUserMb, emailRequiredForSignup: $emailRequiredForSignup, enableHcaptcha: $enableHcaptcha, hcaptchaSiteKey: $hcaptchaSiteKey, enableRecaptcha: $enableRecaptcha, recaptchaSiteKey: $recaptchaSiteKey, enableTurnstile: $enableTurnstile, turnstileSiteKey: $turnstileSiteKey, swPublickey: $swPublickey, themeColor: $themeColor, mascotImageUrl: $mascotImageUrl, bannerUrl: $bannerUrl, errorImageUrl: $errorImageUrl, iconUrl: $iconUrl, backgroundImageUrl: $backgroundImageUrl, logoImageUrl: $logoImageUrl, maxNoteTextLength: $maxNoteTextLength, emojis: $emojis, ads: $ads, requireSetup: $requireSetup, enableEmail: $enableEmail, enableServiceWorker: $enableServiceWorker, translatorAvailable: $translatorAvailable, proxyAccountName: $proxyAccountName, cacheRemoteFiles: $cacheRemoteFiles, features: $features)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MetaResponse &&
+            other is _$MetaResponseImpl &&
             (identical(other.maintainerName, maintainerName) ||
                 other.maintainerName == maintainerName) &&
             (identical(other.maintainerEmail, maintainerEmail) ||
@@ -797,6 +859,16 @@ class _$_MetaResponse implements _MetaResponse {
                 other.defaultLightTheme == defaultLightTheme) &&
             (identical(other.disableRegistration, disableRegistration) ||
                 other.disableRegistration == disableRegistration) &&
+            (identical(other.disableLocalTimeline, disableLocalTimeline) ||
+                other.disableLocalTimeline == disableLocalTimeline) &&
+            (identical(other.disableGlobalTimeline, disableGlobalTimeline) ||
+                other.disableGlobalTimeline == disableGlobalTimeline) &&
+            (identical(other.driveCapacityPerLocalUserMb, driveCapacityPerLocalUserMb) ||
+                other.driveCapacityPerLocalUserMb ==
+                    driveCapacityPerLocalUserMb) &&
+            (identical(other.driveCapacityPerRemoteUserMb, driveCapacityPerRemoteUserMb) ||
+                other.driveCapacityPerRemoteUserMb ==
+                    driveCapacityPerRemoteUserMb) &&
             (identical(other.emailRequiredForSignup, emailRequiredForSignup) ||
                 other.emailRequiredForSignup == emailRequiredForSignup) &&
             (identical(other.enableHcaptcha, enableHcaptcha) ||
@@ -828,6 +900,7 @@ class _$_MetaResponse implements _MetaResponse {
                 other.logoImageUrl == logoImageUrl) &&
             (identical(other.maxNoteTextLength, maxNoteTextLength) ||
                 other.maxNoteTextLength == maxNoteTextLength) &&
+            const DeepCollectionEquality().equals(other._emojis, _emojis) &&
             const DeepCollectionEquality().equals(other._ads, _ads) &&
             (identical(other.requireSetup, requireSetup) ||
                 other.requireSetup == requireSetup) &&
@@ -837,14 +910,9 @@ class _$_MetaResponse implements _MetaResponse {
                 other.enableServiceWorker == enableServiceWorker) &&
             (identical(other.translatorAvailable, translatorAvailable) ||
                 other.translatorAvailable == translatorAvailable) &&
-            (identical(other.proxyAccountName, proxyAccountName) ||
-                other.proxyAccountName == proxyAccountName) &&
-            (identical(other.mediaProxy, mediaProxy) ||
-                other.mediaProxy == mediaProxy) &&
-            (identical(other.cacheRemoteFiles, cacheRemoteFiles) ||
-                other.cacheRemoteFiles == cacheRemoteFiles) &&
-            (identical(other.features, features) ||
-                other.features == features));
+            (identical(other.proxyAccountName, proxyAccountName) || other.proxyAccountName == proxyAccountName) &&
+            (identical(other.cacheRemoteFiles, cacheRemoteFiles) || other.cacheRemoteFiles == cacheRemoteFiles) &&
+            (identical(other.features, features) || other.features == features));
   }
 
   @JsonKey(ignore: true)
@@ -864,6 +932,10 @@ class _$_MetaResponse implements _MetaResponse {
         defaultDarkTheme,
         defaultLightTheme,
         disableRegistration,
+        disableLocalTimeline,
+        disableGlobalTimeline,
+        driveCapacityPerLocalUserMb,
+        driveCapacityPerRemoteUserMb,
         emailRequiredForSignup,
         enableHcaptcha,
         hcaptchaSiteKey,
@@ -880,13 +952,13 @@ class _$_MetaResponse implements _MetaResponse {
         backgroundImageUrl,
         logoImageUrl,
         maxNoteTextLength,
+        const DeepCollectionEquality().hash(_emojis),
         const DeepCollectionEquality().hash(_ads),
         requireSetup,
         enableEmail,
         enableServiceWorker,
         translatorAvailable,
         proxyAccountName,
-        mediaProxy,
         cacheRemoteFiles,
         features
       ]);
@@ -894,12 +966,12 @@ class _$_MetaResponse implements _MetaResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MetaResponseCopyWith<_$_MetaResponse> get copyWith =>
-      __$$_MetaResponseCopyWithImpl<_$_MetaResponse>(this, _$identity);
+  _$$MetaResponseImplCopyWith<_$MetaResponseImpl> get copyWith =>
+      __$$MetaResponseImplCopyWithImpl<_$MetaResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaResponseToJson(
+    return _$$MetaResponseImplToJson(
       this,
     );
   }
@@ -920,6 +992,10 @@ abstract class _MetaResponse implements MetaResponse {
       final String? defaultDarkTheme,
       final String? defaultLightTheme,
       required final bool disableRegistration,
+      required final bool disableLocalTimeline,
+      required final bool disableGlobalTimeline,
+      required final int driveCapacityPerLocalUserMb,
+      required final int driveCapacityPerRemoteUserMb,
       required final bool emailRequiredForSignup,
       required final bool enableHcaptcha,
       final String? hcaptchaSiteKey,
@@ -936,18 +1012,18 @@ abstract class _MetaResponse implements MetaResponse {
       @NullableUriConverter() final Uri? backgroundImageUrl,
       @NullableUriConverter() final Uri? logoImageUrl,
       required final int maxNoteTextLength,
+      required final List<MetaEmoji> emojis,
       required final List<MetaAd> ads,
       final bool? requireSetup,
       final bool? enableEmail,
       final bool? enableServiceWorker,
       final bool? translatorAvailable,
       final String? proxyAccountName,
-      final String? mediaProxy,
       final bool? cacheRemoteFiles,
-      final MetaFeature? features}) = _$_MetaResponse;
+      final MetaFeature? features}) = _$MetaResponseImpl;
 
   factory _MetaResponse.fromJson(Map<String, dynamic> json) =
-      _$_MetaResponse.fromJson;
+      _$MetaResponseImpl.fromJson;
 
   @override
   String? get maintainerName;
@@ -978,10 +1054,15 @@ abstract class _MetaResponse implements MetaResponse {
   String? get defaultLightTheme;
   @override
   bool get disableRegistration;
-  @override //required bool disableLocalTimeline,
-//required bool disableGlobalTimeline,
-//required int driveCapacityPerLocalUserMb,
-//required int driveCapacityPerRemoteUserMb,
+  @override
+  bool get disableLocalTimeline;
+  @override
+  bool get disableGlobalTimeline;
+  @override
+  int get driveCapacityPerLocalUserMb;
+  @override
+  int get driveCapacityPerRemoteUserMb;
+  @override
   bool get emailRequiredForSignup;
   @override
   bool get enableHcaptcha;
@@ -1019,7 +1100,9 @@ abstract class _MetaResponse implements MetaResponse {
   Uri? get logoImageUrl;
   @override
   int get maxNoteTextLength;
-  @override //required List<MetaEmoji> emojis,
+  @override
+  List<MetaEmoji> get emojis;
+  @override
   List<MetaAd> get ads;
   @override
   bool? get requireSetup;
@@ -1033,15 +1116,244 @@ abstract class _MetaResponse implements MetaResponse {
   bool? get translatorAvailable;
   @override
   String? get proxyAccountName;
-  @override
-  String? get mediaProxy;
-  @override
+  @override // String? mediaProxy,
   bool? get cacheRemoteFiles;
   @override
   MetaFeature? get features;
   @override
   @JsonKey(ignore: true)
-  _$$_MetaResponseCopyWith<_$_MetaResponse> get copyWith =>
+  _$$MetaResponseImplCopyWith<_$MetaResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MetaEmoji _$MetaEmojiFromJson(Map<String, dynamic> json) {
+  return _MetaEmoji.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MetaEmoji {
+  String get id => throw _privateConstructorUsedError;
+  List<String> get aliases => throw _privateConstructorUsedError;
+  String? get category => throw _privateConstructorUsedError;
+  String? get host => throw _privateConstructorUsedError;
+  @UriConverter()
+  Uri get url => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MetaEmojiCopyWith<MetaEmoji> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MetaEmojiCopyWith<$Res> {
+  factory $MetaEmojiCopyWith(MetaEmoji value, $Res Function(MetaEmoji) then) =
+      _$MetaEmojiCopyWithImpl<$Res, MetaEmoji>;
+  @useResult
+  $Res call(
+      {String id,
+      List<String> aliases,
+      String? category,
+      String? host,
+      @UriConverter() Uri url});
+}
+
+/// @nodoc
+class _$MetaEmojiCopyWithImpl<$Res, $Val extends MetaEmoji>
+    implements $MetaEmojiCopyWith<$Res> {
+  _$MetaEmojiCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? aliases = null,
+    Object? category = freezed,
+    Object? host = freezed,
+    Object? url = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      aliases: null == aliases
+          ? _value.aliases
+          : aliases // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as Uri,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MetaEmojiImplCopyWith<$Res>
+    implements $MetaEmojiCopyWith<$Res> {
+  factory _$$MetaEmojiImplCopyWith(
+          _$MetaEmojiImpl value, $Res Function(_$MetaEmojiImpl) then) =
+      __$$MetaEmojiImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      List<String> aliases,
+      String? category,
+      String? host,
+      @UriConverter() Uri url});
+}
+
+/// @nodoc
+class __$$MetaEmojiImplCopyWithImpl<$Res>
+    extends _$MetaEmojiCopyWithImpl<$Res, _$MetaEmojiImpl>
+    implements _$$MetaEmojiImplCopyWith<$Res> {
+  __$$MetaEmojiImplCopyWithImpl(
+      _$MetaEmojiImpl _value, $Res Function(_$MetaEmojiImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? aliases = null,
+    Object? category = freezed,
+    Object? host = freezed,
+    Object? url = null,
+  }) {
+    return _then(_$MetaEmojiImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      aliases: null == aliases
+          ? _value._aliases
+          : aliases // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as Uri,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MetaEmojiImpl implements _MetaEmoji {
+  const _$MetaEmojiImpl(
+      {required this.id,
+      required final List<String> aliases,
+      this.category,
+      this.host,
+      @UriConverter() required this.url})
+      : _aliases = aliases;
+
+  factory _$MetaEmojiImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MetaEmojiImplFromJson(json);
+
+  @override
+  final String id;
+  final List<String> _aliases;
+  @override
+  List<String> get aliases {
+    if (_aliases is EqualUnmodifiableListView) return _aliases;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_aliases);
+  }
+
+  @override
+  final String? category;
+  @override
+  final String? host;
+  @override
+  @UriConverter()
+  final Uri url;
+
+  @override
+  String toString() {
+    return 'MetaEmoji(id: $id, aliases: $aliases, category: $category, host: $host, url: $url)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MetaEmojiImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality().equals(other._aliases, _aliases) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.host, host) || other.host == host) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id,
+      const DeepCollectionEquality().hash(_aliases), category, host, url);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MetaEmojiImplCopyWith<_$MetaEmojiImpl> get copyWith =>
+      __$$MetaEmojiImplCopyWithImpl<_$MetaEmojiImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MetaEmojiImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MetaEmoji implements MetaEmoji {
+  const factory _MetaEmoji(
+      {required final String id,
+      required final List<String> aliases,
+      final String? category,
+      final String? host,
+      @UriConverter() required final Uri url}) = _$MetaEmojiImpl;
+
+  factory _MetaEmoji.fromJson(Map<String, dynamic> json) =
+      _$MetaEmojiImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  List<String> get aliases;
+  @override
+  String? get category;
+  @override
+  String? get host;
+  @override
+  @UriConverter()
+  Uri get url;
+  @override
+  @JsonKey(ignore: true)
+  _$$MetaEmojiImplCopyWith<_$MetaEmojiImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1122,9 +1434,10 @@ class _$MetaAdCopyWithImpl<$Res, $Val extends MetaAd>
 }
 
 /// @nodoc
-abstract class _$$_MetaAdCopyWith<$Res> implements $MetaAdCopyWith<$Res> {
-  factory _$$_MetaAdCopyWith(_$_MetaAd value, $Res Function(_$_MetaAd) then) =
-      __$$_MetaAdCopyWithImpl<$Res>;
+abstract class _$$MetaAdImplCopyWith<$Res> implements $MetaAdCopyWith<$Res> {
+  factory _$$MetaAdImplCopyWith(
+          _$MetaAdImpl value, $Res Function(_$MetaAdImpl) then) =
+      __$$MetaAdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1136,10 +1449,11 @@ abstract class _$$_MetaAdCopyWith<$Res> implements $MetaAdCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MetaAdCopyWithImpl<$Res>
-    extends _$MetaAdCopyWithImpl<$Res, _$_MetaAd>
-    implements _$$_MetaAdCopyWith<$Res> {
-  __$$_MetaAdCopyWithImpl(_$_MetaAd _value, $Res Function(_$_MetaAd) _then)
+class __$$MetaAdImplCopyWithImpl<$Res>
+    extends _$MetaAdCopyWithImpl<$Res, _$MetaAdImpl>
+    implements _$$MetaAdImplCopyWith<$Res> {
+  __$$MetaAdImplCopyWithImpl(
+      _$MetaAdImpl _value, $Res Function(_$MetaAdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1151,7 +1465,7 @@ class __$$_MetaAdCopyWithImpl<$Res>
     Object? imageUrl = null,
     Object? ratio = null,
   }) {
-    return _then(_$_MetaAd(
+    return _then(_$MetaAdImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1178,16 +1492,16 @@ class __$$_MetaAdCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MetaAd implements _MetaAd {
-  const _$_MetaAd(
+class _$MetaAdImpl implements _MetaAd {
+  const _$MetaAdImpl(
       {required this.id,
       required this.place,
       @UriConverter() required this.url,
       @UriConverter() required this.imageUrl,
       required this.ratio});
 
-  factory _$_MetaAd.fromJson(Map<String, dynamic> json) =>
-      _$$_MetaAdFromJson(json);
+  factory _$MetaAdImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MetaAdImplFromJson(json);
 
   @override
   final String id;
@@ -1211,7 +1525,7 @@ class _$_MetaAd implements _MetaAd {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MetaAd &&
+            other is _$MetaAdImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.place, place) || other.place == place) &&
             (identical(other.url, url) || other.url == url) &&
@@ -1227,12 +1541,12 @@ class _$_MetaAd implements _MetaAd {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MetaAdCopyWith<_$_MetaAd> get copyWith =>
-      __$$_MetaAdCopyWithImpl<_$_MetaAd>(this, _$identity);
+  _$$MetaAdImplCopyWith<_$MetaAdImpl> get copyWith =>
+      __$$MetaAdImplCopyWithImpl<_$MetaAdImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaAdToJson(
+    return _$$MetaAdImplToJson(
       this,
     );
   }
@@ -1244,9 +1558,9 @@ abstract class _MetaAd implements MetaAd {
       required final String place,
       @UriConverter() required final Uri url,
       @UriConverter() required final Uri imageUrl,
-      required final int ratio}) = _$_MetaAd;
+      required final int ratio}) = _$MetaAdImpl;
 
-  factory _MetaAd.fromJson(Map<String, dynamic> json) = _$_MetaAd.fromJson;
+  factory _MetaAd.fromJson(Map<String, dynamic> json) = _$MetaAdImpl.fromJson;
 
   @override
   String get id;
@@ -1262,7 +1576,7 @@ abstract class _MetaAd implements MetaAd {
   int get ratio;
   @override
   @JsonKey(ignore: true)
-  _$$_MetaAdCopyWith<_$_MetaAd> get copyWith =>
+  _$$MetaAdImplCopyWith<_$MetaAdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1370,11 +1684,11 @@ class _$MetaFeatureCopyWithImpl<$Res, $Val extends MetaFeature>
 }
 
 /// @nodoc
-abstract class _$$_MetaFeatureCopyWith<$Res>
+abstract class _$$MetaFeatureImplCopyWith<$Res>
     implements $MetaFeatureCopyWith<$Res> {
-  factory _$$_MetaFeatureCopyWith(
-          _$_MetaFeature value, $Res Function(_$_MetaFeature) then) =
-      __$$_MetaFeatureCopyWithImpl<$Res>;
+  factory _$$MetaFeatureImplCopyWith(
+          _$MetaFeatureImpl value, $Res Function(_$MetaFeatureImpl) then) =
+      __$$MetaFeatureImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1389,11 +1703,11 @@ abstract class _$$_MetaFeatureCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MetaFeatureCopyWithImpl<$Res>
-    extends _$MetaFeatureCopyWithImpl<$Res, _$_MetaFeature>
-    implements _$$_MetaFeatureCopyWith<$Res> {
-  __$$_MetaFeatureCopyWithImpl(
-      _$_MetaFeature _value, $Res Function(_$_MetaFeature) _then)
+class __$$MetaFeatureImplCopyWithImpl<$Res>
+    extends _$MetaFeatureCopyWithImpl<$Res, _$MetaFeatureImpl>
+    implements _$$MetaFeatureImplCopyWith<$Res> {
+  __$$MetaFeatureImplCopyWithImpl(
+      _$MetaFeatureImpl _value, $Res Function(_$MetaFeatureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1408,7 +1722,7 @@ class __$$_MetaFeatureCopyWithImpl<$Res>
     Object? serviceWorker = null,
     Object? miauth = null,
   }) {
-    return _then(_$_MetaFeature(
+    return _then(_$MetaFeatureImpl(
       registration: null == registration
           ? _value.registration
           : registration // ignore: cast_nullable_to_non_nullable
@@ -1447,8 +1761,8 @@ class __$$_MetaFeatureCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MetaFeature implements _MetaFeature {
-  const _$_MetaFeature(
+class _$MetaFeatureImpl implements _MetaFeature {
+  const _$MetaFeatureImpl(
       {required this.registration,
       required this.emailRequiredForSignup,
       required this.hcaptcha,
@@ -1458,8 +1772,8 @@ class _$_MetaFeature implements _MetaFeature {
       required this.serviceWorker,
       required this.miauth});
 
-  factory _$_MetaFeature.fromJson(Map<String, dynamic> json) =>
-      _$$_MetaFeatureFromJson(json);
+  factory _$MetaFeatureImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MetaFeatureImplFromJson(json);
 
   @override
   final bool registration;
@@ -1493,7 +1807,7 @@ class _$_MetaFeature implements _MetaFeature {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MetaFeature &&
+            other is _$MetaFeatureImpl &&
             (identical(other.registration, registration) ||
                 other.registration == registration) &&
             (identical(other.emailRequiredForSignup, emailRequiredForSignup) ||
@@ -1527,12 +1841,12 @@ class _$_MetaFeature implements _MetaFeature {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MetaFeatureCopyWith<_$_MetaFeature> get copyWith =>
-      __$$_MetaFeatureCopyWithImpl<_$_MetaFeature>(this, _$identity);
+  _$$MetaFeatureImplCopyWith<_$MetaFeatureImpl> get copyWith =>
+      __$$MetaFeatureImplCopyWithImpl<_$MetaFeatureImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaFeatureToJson(
+    return _$$MetaFeatureImplToJson(
       this,
     );
   }
@@ -1547,10 +1861,10 @@ abstract class _MetaFeature implements MetaFeature {
       required final bool turnstile,
       required final bool objectStorage,
       required final bool serviceWorker,
-      required final bool miauth}) = _$_MetaFeature;
+      required final bool miauth}) = _$MetaFeatureImpl;
 
   factory _MetaFeature.fromJson(Map<String, dynamic> json) =
-      _$_MetaFeature.fromJson;
+      _$MetaFeatureImpl.fromJson;
 
   @override
   bool get registration;
@@ -1573,6 +1887,6 @@ abstract class _MetaFeature implements MetaFeature {
   bool get miauth;
   @override
   @JsonKey(ignore: true)
-  _$$_MetaFeatureCopyWith<_$_MetaFeature> get copyWith =>
+  _$$MetaFeatureImplCopyWith<_$MetaFeatureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

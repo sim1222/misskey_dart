@@ -155,9 +155,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$$UserImplCopyWith(
+          _$UserImpl value, $Res Function(_$UserImpl) then) =
+      __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -179,9 +180,10 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+class __$$UserImplCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$UserImpl>
+    implements _$$UserImplCopyWith<$Res> {
+  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -200,7 +202,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? isBot = null,
     Object? emojis = null,
   }) {
-    return _then(_$_User(
+    return _then(_$UserImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -255,8 +257,8 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  const _$_User(
+class _$UserImpl implements _User {
+  const _$UserImpl(
       {required this.id,
       required this.username,
       this.host,
@@ -272,7 +274,8 @@ class _$_User implements _User {
       : _badgeRoles = badgeRoles,
         _emojis = emojis;
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserImplFromJson(json);
 
   @override
   final String id;
@@ -326,7 +329,7 @@ class _$_User implements _User {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$UserImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.username, username) ||
                 other.username == username) &&
@@ -367,12 +370,12 @@ class _$_User implements _User {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(
+    return _$$UserImplToJson(
       this,
     );
   }
@@ -391,9 +394,9 @@ abstract class _User implements User {
       final UserInstanceInfo? instance,
       final bool isCat,
       final bool isBot,
-      @EmojisConverter() final Map<String, String> emojis}) = _$_User;
+      @EmojisConverter() final Map<String, String> emojis}) = _$UserImpl;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
   String get id;
@@ -424,7 +427,8 @@ abstract class _User implements User {
   Map<String, String> get emojis;
   @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 UserInstanceInfo _$UserInstanceInfoFromJson(Map<String, dynamic> json) {
@@ -513,11 +517,11 @@ class _$UserInstanceInfoCopyWithImpl<$Res, $Val extends UserInstanceInfo>
 }
 
 /// @nodoc
-abstract class _$$_UserInstanceInfoCopyWith<$Res>
+abstract class _$$UserInstanceInfoImplCopyWith<$Res>
     implements $UserInstanceInfoCopyWith<$Res> {
-  factory _$$_UserInstanceInfoCopyWith(
-          _$_UserInstanceInfo value, $Res Function(_$_UserInstanceInfo) then) =
-      __$$_UserInstanceInfoCopyWithImpl<$Res>;
+  factory _$$UserInstanceInfoImplCopyWith(_$UserInstanceInfoImpl value,
+          $Res Function(_$UserInstanceInfoImpl) then) =
+      __$$UserInstanceInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -530,11 +534,11 @@ abstract class _$$_UserInstanceInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserInstanceInfoCopyWithImpl<$Res>
-    extends _$UserInstanceInfoCopyWithImpl<$Res, _$_UserInstanceInfo>
-    implements _$$_UserInstanceInfoCopyWith<$Res> {
-  __$$_UserInstanceInfoCopyWithImpl(
-      _$_UserInstanceInfo _value, $Res Function(_$_UserInstanceInfo) _then)
+class __$$UserInstanceInfoImplCopyWithImpl<$Res>
+    extends _$UserInstanceInfoCopyWithImpl<$Res, _$UserInstanceInfoImpl>
+    implements _$$UserInstanceInfoImplCopyWith<$Res> {
+  __$$UserInstanceInfoImplCopyWithImpl(_$UserInstanceInfoImpl _value,
+      $Res Function(_$UserInstanceInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -547,7 +551,7 @@ class __$$_UserInstanceInfoCopyWithImpl<$Res>
     Object? faviconUrl = freezed,
     Object? themeColor = freezed,
   }) {
-    return _then(_$_UserInstanceInfo(
+    return _then(_$UserInstanceInfoImpl(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -578,8 +582,8 @@ class __$$_UserInstanceInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserInstanceInfo implements _UserInstanceInfo {
-  const _$_UserInstanceInfo(
+class _$UserInstanceInfoImpl implements _UserInstanceInfo {
+  const _$UserInstanceInfoImpl(
       {this.name,
       this.softwareVersion,
       this.softwareName,
@@ -587,8 +591,8 @@ class _$_UserInstanceInfo implements _UserInstanceInfo {
       @NullableUriConverter() this.faviconUrl,
       this.themeColor});
 
-  factory _$_UserInstanceInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_UserInstanceInfoFromJson(json);
+  factory _$UserInstanceInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserInstanceInfoImplFromJson(json);
 
   @override
   final String? name;
@@ -614,7 +618,7 @@ class _$_UserInstanceInfo implements _UserInstanceInfo {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserInstanceInfo &&
+            other is _$UserInstanceInfoImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.softwareVersion, softwareVersion) ||
                 other.softwareVersion == softwareVersion) &&
@@ -635,12 +639,13 @@ class _$_UserInstanceInfo implements _UserInstanceInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserInstanceInfoCopyWith<_$_UserInstanceInfo> get copyWith =>
-      __$$_UserInstanceInfoCopyWithImpl<_$_UserInstanceInfo>(this, _$identity);
+  _$$UserInstanceInfoImplCopyWith<_$UserInstanceInfoImpl> get copyWith =>
+      __$$UserInstanceInfoImplCopyWithImpl<_$UserInstanceInfoImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserInstanceInfoToJson(
+    return _$$UserInstanceInfoImplToJson(
       this,
     );
   }
@@ -653,10 +658,10 @@ abstract class _UserInstanceInfo implements UserInstanceInfo {
       final String? softwareName,
       @NullableUriConverter() final Uri? iconUrl,
       @NullableUriConverter() final Uri? faviconUrl,
-      final String? themeColor}) = _$_UserInstanceInfo;
+      final String? themeColor}) = _$UserInstanceInfoImpl;
 
   factory _UserInstanceInfo.fromJson(Map<String, dynamic> json) =
-      _$_UserInstanceInfo.fromJson;
+      _$UserInstanceInfoImpl.fromJson;
 
   @override
   String? get name;
@@ -674,7 +679,7 @@ abstract class _UserInstanceInfo implements UserInstanceInfo {
   String? get themeColor;
   @override
   @JsonKey(ignore: true)
-  _$$_UserInstanceInfoCopyWith<_$_UserInstanceInfo> get copyWith =>
+  _$$UserInstanceInfoImplCopyWith<_$UserInstanceInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -733,22 +738,22 @@ class _$UserBadgeRoleCopyWithImpl<$Res, $Val extends UserBadgeRole>
 }
 
 /// @nodoc
-abstract class _$$_UserBadgeRoleCopyWith<$Res>
+abstract class _$$UserBadgeRoleImplCopyWith<$Res>
     implements $UserBadgeRoleCopyWith<$Res> {
-  factory _$$_UserBadgeRoleCopyWith(
-          _$_UserBadgeRole value, $Res Function(_$_UserBadgeRole) then) =
-      __$$_UserBadgeRoleCopyWithImpl<$Res>;
+  factory _$$UserBadgeRoleImplCopyWith(
+          _$UserBadgeRoleImpl value, $Res Function(_$UserBadgeRoleImpl) then) =
+      __$$UserBadgeRoleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, @NullableUriConverter() Uri? iconUrl});
 }
 
 /// @nodoc
-class __$$_UserBadgeRoleCopyWithImpl<$Res>
-    extends _$UserBadgeRoleCopyWithImpl<$Res, _$_UserBadgeRole>
-    implements _$$_UserBadgeRoleCopyWith<$Res> {
-  __$$_UserBadgeRoleCopyWithImpl(
-      _$_UserBadgeRole _value, $Res Function(_$_UserBadgeRole) _then)
+class __$$UserBadgeRoleImplCopyWithImpl<$Res>
+    extends _$UserBadgeRoleCopyWithImpl<$Res, _$UserBadgeRoleImpl>
+    implements _$$UserBadgeRoleImplCopyWith<$Res> {
+  __$$UserBadgeRoleImplCopyWithImpl(
+      _$UserBadgeRoleImpl _value, $Res Function(_$UserBadgeRoleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -757,7 +762,7 @@ class __$$_UserBadgeRoleCopyWithImpl<$Res>
     Object? name = null,
     Object? iconUrl = freezed,
   }) {
-    return _then(_$_UserBadgeRole(
+    return _then(_$UserBadgeRoleImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -772,12 +777,12 @@ class __$$_UserBadgeRoleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserBadgeRole implements _UserBadgeRole {
-  const _$_UserBadgeRole(
+class _$UserBadgeRoleImpl implements _UserBadgeRole {
+  const _$UserBadgeRoleImpl(
       {required this.name, @NullableUriConverter() required this.iconUrl});
 
-  factory _$_UserBadgeRole.fromJson(Map<String, dynamic> json) =>
-      _$$_UserBadgeRoleFromJson(json);
+  factory _$UserBadgeRoleImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserBadgeRoleImplFromJson(json);
 
   @override
   final String name;
@@ -794,7 +799,7 @@ class _$_UserBadgeRole implements _UserBadgeRole {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserBadgeRole &&
+            other is _$UserBadgeRoleImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.iconUrl, iconUrl) || other.iconUrl == iconUrl));
   }
@@ -806,12 +811,12 @@ class _$_UserBadgeRole implements _UserBadgeRole {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserBadgeRoleCopyWith<_$_UserBadgeRole> get copyWith =>
-      __$$_UserBadgeRoleCopyWithImpl<_$_UserBadgeRole>(this, _$identity);
+  _$$UserBadgeRoleImplCopyWith<_$UserBadgeRoleImpl> get copyWith =>
+      __$$UserBadgeRoleImplCopyWithImpl<_$UserBadgeRoleImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserBadgeRoleToJson(
+    return _$$UserBadgeRoleImplToJson(
       this,
     );
   }
@@ -819,11 +824,12 @@ class _$_UserBadgeRole implements _UserBadgeRole {
 
 abstract class _UserBadgeRole implements UserBadgeRole {
   const factory _UserBadgeRole(
-      {required final String name,
-      @NullableUriConverter() required final Uri? iconUrl}) = _$_UserBadgeRole;
+          {required final String name,
+          @NullableUriConverter() required final Uri? iconUrl}) =
+      _$UserBadgeRoleImpl;
 
   factory _UserBadgeRole.fromJson(Map<String, dynamic> json) =
-      _$_UserBadgeRole.fromJson;
+      _$UserBadgeRoleImpl.fromJson;
 
   @override
   String get name;
@@ -832,7 +838,7 @@ abstract class _UserBadgeRole implements UserBadgeRole {
   Uri? get iconUrl;
   @override
   @JsonKey(ignore: true)
-  _$$_UserBadgeRoleCopyWith<_$_UserBadgeRole> get copyWith =>
+  _$$UserBadgeRoleImplCopyWith<_$UserBadgeRoleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -927,10 +933,11 @@ class _$UserRoleCopyWithImpl<$Res, $Val extends UserRole>
 }
 
 /// @nodoc
-abstract class _$$_UserRoleCopyWith<$Res> implements $UserRoleCopyWith<$Res> {
-  factory _$$_UserRoleCopyWith(
-          _$_UserRole value, $Res Function(_$_UserRole) then) =
-      __$$_UserRoleCopyWithImpl<$Res>;
+abstract class _$$UserRoleImplCopyWith<$Res>
+    implements $UserRoleCopyWith<$Res> {
+  factory _$$UserRoleImplCopyWith(
+          _$UserRoleImpl value, $Res Function(_$UserRoleImpl) then) =
+      __$$UserRoleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -944,11 +951,11 @@ abstract class _$$_UserRoleCopyWith<$Res> implements $UserRoleCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserRoleCopyWithImpl<$Res>
-    extends _$UserRoleCopyWithImpl<$Res, _$_UserRole>
-    implements _$$_UserRoleCopyWith<$Res> {
-  __$$_UserRoleCopyWithImpl(
-      _$_UserRole _value, $Res Function(_$_UserRole) _then)
+class __$$UserRoleImplCopyWithImpl<$Res>
+    extends _$UserRoleCopyWithImpl<$Res, _$UserRoleImpl>
+    implements _$$UserRoleImplCopyWith<$Res> {
+  __$$UserRoleImplCopyWithImpl(
+      _$UserRoleImpl _value, $Res Function(_$UserRoleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -962,7 +969,7 @@ class __$$_UserRoleCopyWithImpl<$Res>
     Object? isModerator = null,
     Object? isAdministrator = null,
   }) {
-    return _then(_$_UserRole(
+    return _then(_$UserRoleImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -997,8 +1004,8 @@ class __$$_UserRoleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserRole implements _UserRole {
-  const _$_UserRole(
+class _$UserRoleImpl implements _UserRole {
+  const _$UserRoleImpl(
       {required this.id,
       required this.name,
       this.color,
@@ -1007,8 +1014,8 @@ class _$_UserRole implements _UserRole {
       required this.isModerator,
       required this.isAdministrator});
 
-  factory _$_UserRole.fromJson(Map<String, dynamic> json) =>
-      _$$_UserRoleFromJson(json);
+  factory _$UserRoleImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserRoleImplFromJson(json);
 
   @override
   final String id;
@@ -1035,7 +1042,7 @@ class _$_UserRole implements _UserRole {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserRole &&
+            other is _$UserRoleImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
@@ -1056,12 +1063,12 @@ class _$_UserRole implements _UserRole {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserRoleCopyWith<_$_UserRole> get copyWith =>
-      __$$_UserRoleCopyWithImpl<_$_UserRole>(this, _$identity);
+  _$$UserRoleImplCopyWith<_$UserRoleImpl> get copyWith =>
+      __$$UserRoleImplCopyWithImpl<_$UserRoleImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserRoleToJson(
+    return _$$UserRoleImplToJson(
       this,
     );
   }
@@ -1075,9 +1082,10 @@ abstract class _UserRole implements UserRole {
       @NullableUriConverter() final Uri? iconUrl,
       final String? description,
       required final bool isModerator,
-      required final bool isAdministrator}) = _$_UserRole;
+      required final bool isAdministrator}) = _$UserRoleImpl;
 
-  factory _UserRole.fromJson(Map<String, dynamic> json) = _$_UserRole.fromJson;
+  factory _UserRole.fromJson(Map<String, dynamic> json) =
+      _$UserRoleImpl.fromJson;
 
   @override
   String get id;
@@ -1096,7 +1104,7 @@ abstract class _UserRole implements UserRole {
   bool get isAdministrator;
   @override
   @JsonKey(ignore: true)
-  _$$_UserRoleCopyWith<_$_UserRole> get copyWith =>
+  _$$UserRoleImplCopyWith<_$UserRoleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1157,11 +1165,11 @@ class _$UserAchievementCopyWithImpl<$Res, $Val extends UserAchievement>
 }
 
 /// @nodoc
-abstract class _$$_UserAchievementCopyWith<$Res>
+abstract class _$$UserAchievementImplCopyWith<$Res>
     implements $UserAchievementCopyWith<$Res> {
-  factory _$$_UserAchievementCopyWith(
-          _$_UserAchievement value, $Res Function(_$_UserAchievement) then) =
-      __$$_UserAchievementCopyWithImpl<$Res>;
+  factory _$$UserAchievementImplCopyWith(_$UserAchievementImpl value,
+          $Res Function(_$UserAchievementImpl) then) =
+      __$$UserAchievementImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1170,11 +1178,11 @@ abstract class _$$_UserAchievementCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserAchievementCopyWithImpl<$Res>
-    extends _$UserAchievementCopyWithImpl<$Res, _$_UserAchievement>
-    implements _$$_UserAchievementCopyWith<$Res> {
-  __$$_UserAchievementCopyWithImpl(
-      _$_UserAchievement _value, $Res Function(_$_UserAchievement) _then)
+class __$$UserAchievementImplCopyWithImpl<$Res>
+    extends _$UserAchievementCopyWithImpl<$Res, _$UserAchievementImpl>
+    implements _$$UserAchievementImplCopyWith<$Res> {
+  __$$UserAchievementImplCopyWithImpl(
+      _$UserAchievementImpl _value, $Res Function(_$UserAchievementImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1183,7 +1191,7 @@ class __$$_UserAchievementCopyWithImpl<$Res>
     Object? name = null,
     Object? unlockedAt = null,
   }) {
-    return _then(_$_UserAchievement(
+    return _then(_$UserAchievementImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1198,13 +1206,13 @@ class __$$_UserAchievementCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserAchievement implements _UserAchievement {
-  const _$_UserAchievement(
+class _$UserAchievementImpl implements _UserAchievement {
+  const _$UserAchievementImpl(
       {required this.name,
       @EpocTimeDateTimeConverter.withMilliSeconds() required this.unlockedAt});
 
-  factory _$_UserAchievement.fromJson(Map<String, dynamic> json) =>
-      _$$_UserAchievementFromJson(json);
+  factory _$UserAchievementImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserAchievementImplFromJson(json);
 
   @override
   final String name;
@@ -1221,7 +1229,7 @@ class _$_UserAchievement implements _UserAchievement {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserAchievement &&
+            other is _$UserAchievementImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.unlockedAt, unlockedAt) ||
                 other.unlockedAt == unlockedAt));
@@ -1234,12 +1242,13 @@ class _$_UserAchievement implements _UserAchievement {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserAchievementCopyWith<_$_UserAchievement> get copyWith =>
-      __$$_UserAchievementCopyWithImpl<_$_UserAchievement>(this, _$identity);
+  _$$UserAchievementImplCopyWith<_$UserAchievementImpl> get copyWith =>
+      __$$UserAchievementImplCopyWithImpl<_$UserAchievementImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserAchievementToJson(
+    return _$$UserAchievementImplToJson(
       this,
     );
   }
@@ -1249,10 +1258,10 @@ abstract class _UserAchievement implements UserAchievement {
   const factory _UserAchievement(
       {required final String name,
       @EpocTimeDateTimeConverter.withMilliSeconds()
-      required final DateTime unlockedAt}) = _$_UserAchievement;
+      required final DateTime unlockedAt}) = _$UserAchievementImpl;
 
   factory _UserAchievement.fromJson(Map<String, dynamic> json) =
-      _$_UserAchievement.fromJson;
+      _$UserAchievementImpl.fromJson;
 
   @override
   String get name;
@@ -1261,7 +1270,7 @@ abstract class _UserAchievement implements UserAchievement {
   DateTime get unlockedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_UserAchievementCopyWith<_$_UserAchievement> get copyWith =>
+  _$$UserAchievementImplCopyWith<_$UserAchievementImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1454,11 +1463,11 @@ class _$UserPoliciesCopyWithImpl<$Res, $Val extends UserPolicies>
 }
 
 /// @nodoc
-abstract class _$$_UserPoliciesCopyWith<$Res>
+abstract class _$$UserPoliciesImplCopyWith<$Res>
     implements $UserPoliciesCopyWith<$Res> {
-  factory _$$_UserPoliciesCopyWith(
-          _$_UserPolicies value, $Res Function(_$_UserPolicies) then) =
-      __$$_UserPoliciesCopyWithImpl<$Res>;
+  factory _$$UserPoliciesImplCopyWith(
+          _$UserPoliciesImpl value, $Res Function(_$UserPoliciesImpl) then) =
+      __$$UserPoliciesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1486,11 +1495,11 @@ abstract class _$$_UserPoliciesCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserPoliciesCopyWithImpl<$Res>
-    extends _$UserPoliciesCopyWithImpl<$Res, _$_UserPolicies>
-    implements _$$_UserPoliciesCopyWith<$Res> {
-  __$$_UserPoliciesCopyWithImpl(
-      _$_UserPolicies _value, $Res Function(_$_UserPolicies) _then)
+class __$$UserPoliciesImplCopyWithImpl<$Res>
+    extends _$UserPoliciesCopyWithImpl<$Res, _$UserPoliciesImpl>
+    implements _$$UserPoliciesImplCopyWith<$Res> {
+  __$$UserPoliciesImplCopyWithImpl(
+      _$UserPoliciesImpl _value, $Res Function(_$UserPoliciesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1518,7 +1527,7 @@ class __$$_UserPoliciesCopyWithImpl<$Res>
     Object? userEachUserListsLimit = null,
     Object? rateLimitFactor = null,
   }) {
-    return _then(_$_UserPolicies(
+    return _then(_$UserPoliciesImpl(
       gtlAvailable: null == gtlAvailable
           ? _value.gtlAvailable
           : gtlAvailable // ignore: cast_nullable_to_non_nullable
@@ -1606,8 +1615,8 @@ class __$$_UserPoliciesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserPolicies implements _UserPolicies {
-  const _$_UserPolicies(
+class _$UserPoliciesImpl implements _UserPolicies {
+  const _$UserPoliciesImpl(
       {required this.gtlAvailable,
       required this.ltlAvailable,
       required this.canPublicNote,
@@ -1630,8 +1639,8 @@ class _$_UserPolicies implements _UserPolicies {
       required this.userEachUserListsLimit,
       required this.rateLimitFactor});
 
-  factory _$_UserPolicies.fromJson(Map<String, dynamic> json) =>
-      _$$_UserPoliciesFromJson(json);
+  factory _$UserPoliciesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserPoliciesImplFromJson(json);
 
   @override
   final bool gtlAvailable;
@@ -1688,7 +1697,7 @@ class _$_UserPolicies implements _UserPolicies {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserPolicies &&
+            other is _$UserPoliciesImpl &&
             (identical(other.gtlAvailable, gtlAvailable) ||
                 other.gtlAvailable == gtlAvailable) &&
             (identical(other.ltlAvailable, ltlAvailable) ||
@@ -1763,12 +1772,12 @@ class _$_UserPolicies implements _UserPolicies {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserPoliciesCopyWith<_$_UserPolicies> get copyWith =>
-      __$$_UserPoliciesCopyWithImpl<_$_UserPolicies>(this, _$identity);
+  _$$UserPoliciesImplCopyWith<_$UserPoliciesImpl> get copyWith =>
+      __$$UserPoliciesImplCopyWithImpl<_$UserPoliciesImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserPoliciesToJson(
+    return _$$UserPoliciesImplToJson(
       this,
     );
   }
@@ -1796,10 +1805,10 @@ abstract class _UserPolicies implements UserPolicies {
       required final int noteEachClipsLimit,
       required final int userListLimit,
       required final int userEachUserListsLimit,
-      required final double rateLimitFactor}) = _$_UserPolicies;
+      required final double rateLimitFactor}) = _$UserPoliciesImpl;
 
   factory _UserPolicies.fromJson(Map<String, dynamic> json) =
-      _$_UserPolicies.fromJson;
+      _$UserPoliciesImpl.fromJson;
 
   @override
   bool get gtlAvailable;
@@ -1845,7 +1854,7 @@ abstract class _UserPolicies implements UserPolicies {
   double get rateLimitFactor;
   @override
   @JsonKey(ignore: true)
-  _$$_UserPoliciesCopyWith<_$_UserPolicies> get copyWith =>
+  _$$UserPoliciesImplCopyWith<_$UserPoliciesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1902,21 +1911,22 @@ class _$UserFieldCopyWithImpl<$Res, $Val extends UserField>
 }
 
 /// @nodoc
-abstract class _$$_UserFieldCopyWith<$Res> implements $UserFieldCopyWith<$Res> {
-  factory _$$_UserFieldCopyWith(
-          _$_UserField value, $Res Function(_$_UserField) then) =
-      __$$_UserFieldCopyWithImpl<$Res>;
+abstract class _$$UserFieldImplCopyWith<$Res>
+    implements $UserFieldCopyWith<$Res> {
+  factory _$$UserFieldImplCopyWith(
+          _$UserFieldImpl value, $Res Function(_$UserFieldImpl) then) =
+      __$$UserFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, String value});
 }
 
 /// @nodoc
-class __$$_UserFieldCopyWithImpl<$Res>
-    extends _$UserFieldCopyWithImpl<$Res, _$_UserField>
-    implements _$$_UserFieldCopyWith<$Res> {
-  __$$_UserFieldCopyWithImpl(
-      _$_UserField _value, $Res Function(_$_UserField) _then)
+class __$$UserFieldImplCopyWithImpl<$Res>
+    extends _$UserFieldCopyWithImpl<$Res, _$UserFieldImpl>
+    implements _$$UserFieldImplCopyWith<$Res> {
+  __$$UserFieldImplCopyWithImpl(
+      _$UserFieldImpl _value, $Res Function(_$UserFieldImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1925,7 +1935,7 @@ class __$$_UserFieldCopyWithImpl<$Res>
     Object? name = null,
     Object? value = null,
   }) {
-    return _then(_$_UserField(
+    return _then(_$UserFieldImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1940,11 +1950,11 @@ class __$$_UserFieldCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserField implements _UserField {
-  const _$_UserField({required this.name, required this.value});
+class _$UserFieldImpl implements _UserField {
+  const _$UserFieldImpl({required this.name, required this.value});
 
-  factory _$_UserField.fromJson(Map<String, dynamic> json) =>
-      _$$_UserFieldFromJson(json);
+  factory _$UserFieldImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserFieldImplFromJson(json);
 
   @override
   final String name;
@@ -1960,7 +1970,7 @@ class _$_UserField implements _UserField {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserField &&
+            other is _$UserFieldImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.value, value) || other.value == value));
   }
@@ -1972,12 +1982,12 @@ class _$_UserField implements _UserField {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserFieldCopyWith<_$_UserField> get copyWith =>
-      __$$_UserFieldCopyWithImpl<_$_UserField>(this, _$identity);
+  _$$UserFieldImplCopyWith<_$UserFieldImpl> get copyWith =>
+      __$$UserFieldImplCopyWithImpl<_$UserFieldImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserFieldToJson(
+    return _$$UserFieldImplToJson(
       this,
     );
   }
@@ -1985,10 +1995,11 @@ class _$_UserField implements _UserField {
 
 abstract class _UserField implements UserField {
   const factory _UserField(
-      {required final String name, required final String value}) = _$_UserField;
+      {required final String name,
+      required final String value}) = _$UserFieldImpl;
 
   factory _UserField.fromJson(Map<String, dynamic> json) =
-      _$_UserField.fromJson;
+      _$UserFieldImpl.fromJson;
 
   @override
   String get name;
@@ -1996,6 +2007,6 @@ abstract class _UserField implements UserField {
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$_UserFieldCopyWith<_$_UserField> get copyWith =>
+  _$$UserFieldImplCopyWith<_$UserFieldImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
