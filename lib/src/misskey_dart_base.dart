@@ -84,18 +84,18 @@ class Misskey {
     return response.cast<String>();
   }
 
-  /// サーバーが持つカスタム絵文字の一覧を取得します。
-  Future<EmojisResponse> emojis() async {
-    final response = await apiService.post<Map<String, dynamic>>("emojis", {});
-    return EmojisResponse.fromJson(response);
-  }
+  // /// サーバーが持つカスタム絵文字の一覧を取得します。
+  // Future<EmojisResponse> emojis() async {
+  //   final response = await apiService.post<Map<String, dynamic>>("emojis", {});
+  //   return EmojisResponse.fromJson(response);
+  // }
 
-  /// 単一の絵文字についての情報を取得します。
-  Future<EmojiResponse> emoji(EmojiRequest request) async {
-    final response =
-        await apiService.post<Map<String, dynamic>>("emoji", request.toJson());
-    return EmojiResponse.fromJson(response);
-  }
+  // /// 単一の絵文字についての情報を取得します。
+  // Future<EmojiResponse> emoji(EmojiRequest request) async {
+  //   final response =
+  //       await apiService.post<Map<String, dynamic>>("emoji", request.toJson());
+  //   return EmojiResponse.fromJson(response);
+  // }
 
   /// サーバーの情報を取得します。
   Future<MetaResponse> meta() async {
