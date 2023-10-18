@@ -127,6 +127,7 @@ _$MetaEmojiImpl _$$MetaEmojiImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       aliases:
           (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
+      name: json['name'] as String,
       category: json['category'] as String?,
       host: json['host'] as String?,
       url: const UriConverter().fromJson(json['url'] as String),
@@ -136,6 +137,7 @@ Map<String, dynamic> _$$MetaEmojiImplToJson(_$MetaEmojiImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'aliases': instance.aliases,
+      'name': instance.name,
       'category': instance.category,
       'host': instance.host,
       'url': const UriConverter().toJson(instance.url),

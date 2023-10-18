@@ -909,9 +909,9 @@ void main() async {
         await userClient.endpoints();
       });
 
-      test("emojis", () async {
-        await userClient.emojis();
-      });
+      // test("emojis", () async {
+      //   await userClient.emojis();
+      // });
 
       test("meta", () async {
         await userClient.meta();

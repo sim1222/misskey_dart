@@ -64,6 +64,7 @@ class MetaEmoji with _$MetaEmoji {
   const factory MetaEmoji({
     required String id,
     required List<String> aliases,
+    required String name,
     String? category,
     String? host,
     @UriConverter()

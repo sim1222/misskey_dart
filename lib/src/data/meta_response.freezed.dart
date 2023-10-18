@@ -1134,6 +1134,7 @@ MetaEmoji _$MetaEmojiFromJson(Map<String, dynamic> json) {
 mixin _$MetaEmoji {
   String get id => throw _privateConstructorUsedError;
   List<String> get aliases => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
   String? get host => throw _privateConstructorUsedError;
   @UriConverter()
@@ -1153,6 +1154,7 @@ abstract class $MetaEmojiCopyWith<$Res> {
   $Res call(
       {String id,
       List<String> aliases,
+      String name,
       String? category,
       String? host,
       @UriConverter() Uri url});
@@ -1173,6 +1175,7 @@ class _$MetaEmojiCopyWithImpl<$Res, $Val extends MetaEmoji>
   $Res call({
     Object? id = null,
     Object? aliases = null,
+    Object? name = null,
     Object? category = freezed,
     Object? host = freezed,
     Object? url = null,
@@ -1186,6 +1189,10 @@ class _$MetaEmojiCopyWithImpl<$Res, $Val extends MetaEmoji>
           ? _value.aliases
           : aliases // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -1213,6 +1220,7 @@ abstract class _$$MetaEmojiImplCopyWith<$Res>
   $Res call(
       {String id,
       List<String> aliases,
+      String name,
       String? category,
       String? host,
       @UriConverter() Uri url});
@@ -1231,6 +1239,7 @@ class __$$MetaEmojiImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? aliases = null,
+    Object? name = null,
     Object? category = freezed,
     Object? host = freezed,
     Object? url = null,
@@ -1244,6 +1253,10 @@ class __$$MetaEmojiImplCopyWithImpl<$Res>
           ? _value._aliases
           : aliases // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -1266,6 +1279,7 @@ class _$MetaEmojiImpl implements _MetaEmoji {
   const _$MetaEmojiImpl(
       {required this.id,
       required final List<String> aliases,
+      required this.name,
       this.category,
       this.host,
       @UriConverter() required this.url})
@@ -1285,6 +1299,8 @@ class _$MetaEmojiImpl implements _MetaEmoji {
   }
 
   @override
+  final String name;
+  @override
   final String? category;
   @override
   final String? host;
@@ -1294,7 +1310,7 @@ class _$MetaEmojiImpl implements _MetaEmoji {
 
   @override
   String toString() {
-    return 'MetaEmoji(id: $id, aliases: $aliases, category: $category, host: $host, url: $url)';
+    return 'MetaEmoji(id: $id, aliases: $aliases, name: $name, category: $category, host: $host, url: $url)';
   }
 
   @override
@@ -1304,6 +1320,7 @@ class _$MetaEmojiImpl implements _MetaEmoji {
             other is _$MetaEmojiImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._aliases, _aliases) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.host, host) || other.host == host) &&
@@ -1313,7 +1330,7 @@ class _$MetaEmojiImpl implements _MetaEmoji {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id,
-      const DeepCollectionEquality().hash(_aliases), category, host, url);
+      const DeepCollectionEquality().hash(_aliases), name, category, host, url);
 
   @JsonKey(ignore: true)
   @override
@@ -1333,6 +1350,7 @@ abstract class _MetaEmoji implements MetaEmoji {
   const factory _MetaEmoji(
       {required final String id,
       required final List<String> aliases,
+      required final String name,
       final String? category,
       final String? host,
       @UriConverter() required final Uri url}) = _$MetaEmojiImpl;
@@ -1344,6 +1362,8 @@ abstract class _MetaEmoji implements MetaEmoji {
   String get id;
   @override
   List<String> get aliases;
+  @override
+  String get name;
   @override
   String? get category;
   @override
