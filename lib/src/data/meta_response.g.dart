@@ -50,7 +50,7 @@ _$MetaResponseImpl _$$MetaResponseImplFromJson(Map<String, dynamic> json) =>
           json['logoImageUrl'], const NullableUriConverter().fromJson),
       maxNoteTextLength: json['maxNoteTextLength'] as int,
       emojis: (json['emojis'] as List<dynamic>)
-          .map((e) => MetaEmoji.fromJson(e as Map<String, dynamic>))
+          .map((e) => Emoji.fromJson(e as Map<String, dynamic>))
           .toList(),
       ads: (json['ads'] as List<dynamic>)
           .map((e) => MetaAd.fromJson(e as Map<String, dynamic>))

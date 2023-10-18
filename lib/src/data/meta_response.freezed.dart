@@ -62,7 +62,7 @@ mixin _$MetaResponse {
   @NullableUriConverter()
   Uri? get logoImageUrl => throw _privateConstructorUsedError;
   int get maxNoteTextLength => throw _privateConstructorUsedError;
-  List<MetaEmoji> get emojis => throw _privateConstructorUsedError;
+  List<Emoji> get emojis => throw _privateConstructorUsedError;
   List<MetaAd> get ads => throw _privateConstructorUsedError;
   bool? get requireSetup => throw _privateConstructorUsedError;
   bool? get enableEmail =>
@@ -122,7 +122,7 @@ abstract class $MetaResponseCopyWith<$Res> {
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
       int maxNoteTextLength,
-      List<MetaEmoji> emojis,
+      List<Emoji> emojis,
       List<MetaAd> ads,
       bool? requireSetup,
       bool? enableEmail,
@@ -327,7 +327,7 @@ class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
       emojis: null == emojis
           ? _value.emojis
           : emojis // ignore: cast_nullable_to_non_nullable
-              as List<MetaEmoji>,
+              as List<Emoji>,
       ads: null == ads
           ? _value.ads
           : ads // ignore: cast_nullable_to_non_nullable
@@ -418,7 +418,7 @@ abstract class _$$MetaResponseImplCopyWith<$Res>
       @NullableUriConverter() Uri? backgroundImageUrl,
       @NullableUriConverter() Uri? logoImageUrl,
       int maxNoteTextLength,
-      List<MetaEmoji> emojis,
+      List<Emoji> emojis,
       List<MetaAd> ads,
       bool? requireSetup,
       bool? enableEmail,
@@ -622,7 +622,7 @@ class __$$MetaResponseImplCopyWithImpl<$Res>
       emojis: null == emojis
           ? _value._emojis
           : emojis // ignore: cast_nullable_to_non_nullable
-              as List<MetaEmoji>,
+              as List<Emoji>,
       ads: null == ads
           ? _value._ads
           : ads // ignore: cast_nullable_to_non_nullable
@@ -696,7 +696,7 @@ class _$MetaResponseImpl implements _MetaResponse {
       @NullableUriConverter() this.backgroundImageUrl,
       @NullableUriConverter() this.logoImageUrl,
       required this.maxNoteTextLength,
-      required final List<MetaEmoji> emojis,
+      required final List<Emoji> emojis,
       required final List<MetaAd> ads,
       this.requireSetup,
       this.enableEmail,
@@ -793,9 +793,9 @@ class _$MetaResponseImpl implements _MetaResponse {
   final Uri? logoImageUrl;
   @override
   final int maxNoteTextLength;
-  final List<MetaEmoji> _emojis;
+  final List<Emoji> _emojis;
   @override
-  List<MetaEmoji> get emojis {
+  List<Emoji> get emojis {
     if (_emojis is EqualUnmodifiableListView) return _emojis;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_emojis);
@@ -1012,7 +1012,7 @@ abstract class _MetaResponse implements MetaResponse {
       @NullableUriConverter() final Uri? backgroundImageUrl,
       @NullableUriConverter() final Uri? logoImageUrl,
       required final int maxNoteTextLength,
-      required final List<MetaEmoji> emojis,
+      required final List<Emoji> emojis,
       required final List<MetaAd> ads,
       final bool? requireSetup,
       final bool? enableEmail,
@@ -1101,7 +1101,7 @@ abstract class _MetaResponse implements MetaResponse {
   @override
   int get maxNoteTextLength;
   @override
-  List<MetaEmoji> get emojis;
+  List<Emoji> get emojis;
   @override
   List<MetaAd> get ads;
   @override

@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:misskey_dart/src/converters/uri_converter.dart';
 
+import '../../misskey_dart.dart';
+
 part 'meta_response.freezed.dart';
 part 'meta_response.g.dart';
 
@@ -40,7 +42,7 @@ class MetaResponse with _$MetaResponse {
     @NullableUriConverter() Uri? backgroundImageUrl,
     @NullableUriConverter() Uri? logoImageUrl,
     required int maxNoteTextLength,
-    required List<MetaEmoji> emojis,
+    required List<Emoji> emojis,
     required List<MetaAd> ads,
     bool? requireSetup,
     bool? enableEmail,
